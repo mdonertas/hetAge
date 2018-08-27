@@ -1,0 +1,28 @@
+Package: hetAge
+Type: Package
+Title: Calculate Age-related Heterogeneity in Gene Expression
+Version: 0.1.0
+Authors@R: c(person("Melike", "Donertas", role=c("aut", "cre"), email="melike@ebi.ac.uk", 
+      comment = c(ORCID = "0000-0002-9788-6535")), 
+		person("Ulas", "Isildak", role=c("aut", "ctb"), email="isildak.ulas@gmail.com@gmail.com"), 
+		person("Mehmet", "Somel", role=c("aut"), email="msomel@metu.edu.tr", 
+      comment = c(ORCID = "0000-0002-3138-1307")),
+		person("Janet", "Thornton", role=c("aut"), email="thornton@ebi.ac.uk", 
+      comment = c(ORCID = "0000-0003-0824-4096")))
+Maintainer: Melike Donertas <melike@ebi.ac.uk>
+Description: A collection of functions to analyse the age-related changes in gene expression level and heterogeneity.
+License: GPL-3
+URL: https://mdonertas.github.io/hetAge
+BugReports: https://github.com/mdonertas/hetAge/issues
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
+Imports:
+    dplyr, 
+    preprocessCore,
+    sva,
+    tibble,
+    reshape2
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

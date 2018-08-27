@@ -1,0 +1,147 @@
+---
+title: "Package Tutorial - Using LR Correction"
+author: "Melike Donertas"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Download data and prepare for the analysis 
+
+Data is downloaded from GEO using getGEO function in GEOquery library. Expression matrix with probeset IDs, age of the samples and covarietes to be included in the analysis are extracted from geo object. Please note that this tutorial is just to demonstrate the functionality of this package and is not a proper gene expression analysis tutorial. Thus we skip many potential QC steps and probeset -> gene ID mapping. 
+
+```{r}
+library(GEOquery)
+geo <- getGEO('GSE30272',destdir = '~/temp/')[[1]]
+pd <- Biobase::pData(geo)
+expmat <- Biobase::exprs(geo)
+ages <- setNames(as.numeric(pd$`age:ch1`), pd$geo_accession)
+covs <- list(array = as.factor(setNames(pd$`array batch:ch1`, pd$geo_accession)),
+bbs = as.factor(setNames(pd$`brain bank source:ch1`, pd$geo_accession)),
+sex = as.factor(setNames(pd$`Sex:ch1`, pd$geo_accession)),
+race = as.factor(setNames(pd$`race:ch1`, pd$geo_accession)))
+ages <- ages[ages >= 20]
+expmat <- expmat[, names(ages)]
+covs <- lapply(covs, function(x)x[names(ages)])
+```
+
+
+# Calculating the age-related changes in expression level and heterogeneity
+
+We can simply use `calc.het` function in our package to have all relevant results:
+
+* Here we supply ages in years ('age_in' parameter) but we want the model to be constructed on the fourt root scale of age ('age_to' parameter). 
+* We want to apply first linear regression and then Quantile Normalisation ('batch_corr' parameter) to correct for the confounding factors. 
+* The list of covariates are provided to regerss out their effect
+* The age-related change in gene expression will be modelled using a linear model ('modex' parameter). 
+* Data will not be log2 transformed ('tr_log2' parameter). 
+* Features (probesets), will be scaled before the analysis ('sc_features' parameter). 
+* We will use spearman correlation coefficient between absolute values of residuals from the model for age-related change in expression level and ages to assess age-related change in expression heterogeneity ('het_change_met' parameter). 
+* All p-values calculated within this function will be corrected for multiple testing using 'FDR' ('padj_met' parameter).
+
+```{r}
+library(hetAge)
+resx <- calc.het(exprmat = expmat[sample(rownames(expmat),1000),], # expression matrix
+  age = ages, # age vector
+  age_in = 'years',  # scale of the age vector
+  age_to = 'pw-0.25', # scale of ages to be used
+  batch_corr = 'LR+QN',  # batch correction method
+  modex = 'linear', # model for the change in expression level
+  tr_log2 = F, # log2 transform input matrix
+  sc_features = T, # scale genes / probesets
+  covariates = covs, # covariates
+  het_change_met = 'spearman', # method to measure change in heterogeneity
+  padj_met = 'fdr') # multiple test correction method
+```
+
+# Result object
+
+The resulting object is a list with several fields. 
+
+### The list of sampels used in the analysis:
+```{r}
+head(resx$sampleID)
+```
+
+## The expression matrix inputted in the first place, only including the samples used in the analysis.
+
+```{r}
+resx$input_expr[1:5,1:5]
+```
+
+## The ages in the original format, including only the samples used in the analysis
+
+```{r}
+head(resx$input_age)
+```
+
+## The ages after re-formetted into desired format
+
+Here we wanted the ages to be in fourth root scale.
+
+```{r}
+head(resx$usedAge)
+```
+
+```{r}
+library(tidyverse)
+data.frame(age = resx$input_age, age0.25 = resx$usedAge) %>%
+  ggplot(aes(x = age, y = age0.25)) +
+  geom_point() +
+  geom_smooth( method = 'loess') +
+  theme_bw()
+```
+
+## Expression matrix after correcting for confounding factors
+
+These are the expression values for the probesets after accounting for the given covariates.
+
+```{r}
+resx$LR_res$correctedExp[1:5,1:5]
+```
+
+## Covariate coefficients for each feature
+
+```{r}
+head(resx$LR_res$cov_coef)
+```
+
+## P values for the covariate coefficients for each feature based on linear regression
+
+```{r}
+head(resx$LR_res$cov_p)
+```
+
+## The expression level matrix used for modeling
+
+This is the matrix used to model age-related expression change - the reason it is different from corrected matrix is because we may further scale the expression level for the features ('sc_features' parameter.)
+
+```{r}
+resx$usedMat[1:5,1:5]
+```
+
+## Residuals from the model between expression level and age
+
+Absolute values of this matrix can be considered as the level of heterogeneity for each gene, each sample. 
+
+```{r}
+resx$residMat[1:5,1:5]
+```
+
+## Data frame with the summaries of age-related changes in expression level and heterogeneity
+
+```{r}
+colnames(resx$feature_result)
+head(resx$feature_result) 
+```
+
