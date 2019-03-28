@@ -4,12 +4,10 @@
 \alias{calc.het}
 \title{Calculate Age-related Expression and Heterogeneity Changes}
 \usage{
-calc.het(exprmat, age, age_in = c("days", "years"),
-  age_to = c("pw-0.25", "years"), batch_corr = c("NC", "QN", "LR",
-  "SVA", "LR+QN", "SVA+QN"), modex = c("linear", "loess"),
-  tr_log2 = c(T, F), sc_features = c(T, F), covariates = NA,
-  het_change_met = c("spearman", "pearson", "LR"), padj_met = c("fdr",
-  "BY"))
+calc.het(exprmat, age, age_in = "days", age_to = "pw-0.25",
+  batch_corr = "NC", modex = "linear", tr_log2 = T,
+  sc_features = T, covariates = NA, het_change_met = "spearman",
+  padj_met = "fdr")
 }
 \arguments{
 \item{exprmat}{a numeric matrix with the expression values, where columns are the samples and rows are probesets, transcripts, or genes.}
@@ -20,7 +18,7 @@ calc.het(exprmat, age, age_in = c("days", "years"),
 
 \item{age_to}{final format of age vector. allowed values are 'years', 'days', 'pw-N', and 'lg-N', where N is any number. 'pw' means power. e.g. pw-0.5 means sqrt(age), and 'lg' means log, e.g. lg-2 means log2(age).defaults to 'pw-0.25'}
 
-\item{batch_corr}{batch correction strategy. available values are i) NC: No Correction, ii) QN: Quantile Normalization, iii) LR: Linear regression (requires covariates), iv) SVA: surrogate variable analysis, v) LR+QN: Linear regression followed by quantile normalization, and vi) SVA+QN: SVA followed by quantile normalization,}
+\item{batch_corr}{batch correction strategy. available values are i) NC: No Correction, ii) QN: Quantile Normalization, iii) LR: Linear regression (requires covariates), iv) SVA: surrogate variable analysis, v) LR+QN: Linear regression followed by quantile normalization, and vi) SVA+QN: SVA followed by quantile normalization. Defaults to 'NC'.}
 
 \item{modex}{expression change calculation method. 'linear' or 'loess', defaults to 'linear'}
 

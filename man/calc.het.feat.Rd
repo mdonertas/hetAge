@@ -4,7 +4,7 @@
 \alias{calc.het.feat}
 \title{Calculate Age-related Expression and Heterogeneity Changes for Gene}
 \usage{
-calc.het.feat(exprs, age, modex = c("linear", "loess"), het_change_met)
+calc.het.feat(exprs, age, modex = "linear", het_change_met)
 }
 \arguments{
 \item{exprs}{a numeric vector with the expression values, ordered the same as age vector}

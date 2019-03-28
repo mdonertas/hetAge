@@ -173,7 +173,7 @@ feature_scale <- function(mat) {
 #'
 #' @param age a numeric vector with ages
 #' @param type type of the age vector, allowed values are days or years. defaults to 'days'
-#' @param to final format of age vector. allowed values are 'years', 'days', 'pw-N', and 'lg-N', where N is any number. 'pw' means power. e.g. pw-0.5 means sqrt(age), and 'lg' means log, e.g. lg-2 means log2(age)
+#' @param to final format of age vector. allowed values are 'years', 'days', 'pw-N', and 'lg-N', where N is any number. 'pw' means power. e.g. pw-0.5 means sqrt(age), and 'lg' means log, e.g. lg-2 means log2(age). Defaults to 'years'.
 #'
 #' @return a vector with ages in the desired scale
 #' @export
@@ -184,8 +184,8 @@ feature_scale <- function(mat) {
 #' transform_age(agevec, type = 'years', to = 'pw-0.25')
 #' transform_age(agevec, type = 'years', to = 'lg-10')
 #'
-transform_age <- function(age, type = c('days', 'years'),
-                          to = c('years', 'days', 'pw-N', 'lg-N')) {
+transform_age <- function(age, type = 'days',
+                          to = 'years') {
     if (type == 'years') {
         age <- age * 365
     }

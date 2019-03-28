@@ -4,15 +4,14 @@
 \alias{transform_age}
 \title{Age Transforming Function}
 \usage{
-transform_age(age, type = c("days", "years"), to = c("years", "days",
-  "pw-N", "lg-N"))
+transform_age(age, type = "days", to = "years")
 }
 \arguments{
 \item{age}{a numeric vector with ages}
 
 \item{type}{type of the age vector, allowed values are days or years. defaults to 'days'}
 
-\item{to}{final format of age vector. allowed values are 'years', 'days', 'pw-N', and 'lg-N', where N is any number. 'pw' means power. e.g. pw-0.5 means sqrt(age), and 'lg' means log, e.g. lg-2 means log2(age)}
+\item{to}{final format of age vector. allowed values are 'years', 'days', 'pw-N', and 'lg-N', where N is any number. 'pw' means power. e.g. pw-0.5 means sqrt(age), and 'lg' means log, e.g. lg-2 means log2(age). Defaults to 'years'.}
 }
 \value{
 a vector with ages in the desired scale

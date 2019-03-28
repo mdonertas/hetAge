@@ -8,7 +8,7 @@
 #' @return a list with i) summary results with the effect size and p value for expression level and heterogeneity changes, ii) residuals from expr~age model, which corresponds to unexplained variance, iii) expression values passed into the function.
 #' @export
 #'
-calc.het.feat <- function(exprs, age, modex = c('linear','loess'),
+calc.het.feat <- function(exprs, age, modex = 'linear',
                           het_change_met) {
     if ( modex == 'linear') {
         lmx <- lm(exprs ~ age)
@@ -44,7 +44,7 @@ calc.het.feat <- function(exprs, age, modex = c('linear','loess'),
 #' @param age a numeric vector, where the names correspond to samples (the same as colnames of the given matrix).
 #' @param age_in type of the age vector, allowed values are days or years. defaults to 'days'
 #' @param age_to final format of age vector. allowed values are 'years', 'days', 'pw-N', and 'lg-N', where N is any number. 'pw' means power. e.g. pw-0.5 means sqrt(age), and 'lg' means log, e.g. lg-2 means log2(age).defaults to 'pw-0.25'
-#' @param batch_corr batch correction strategy. available values are i) NC: No Correction, ii) QN: Quantile Normalization, iii) LR: Linear regression (requires covariates), iv) SVA: surrogate variable analysis, v) LR+QN: Linear regression followed by quantile normalization, and vi) SVA+QN: SVA followed by quantile normalization,
+#' @param batch_corr batch correction strategy. available values are i) NC: No Correction, ii) QN: Quantile Normalization, iii) LR: Linear regression (requires covariates), iv) SVA: surrogate variable analysis, v) LR+QN: Linear regression followed by quantile normalization, and vi) SVA+QN: SVA followed by quantile normalization. Defaults to 'NC'.
 #' @param modex expression change calculation method. 'linear' or 'loess', defaults to 'linear'
 #' @param tr_log2 logical to set log2 transforming expression matrix. defaults to TRUE.
 #' @param sc_features logical to set whether to scale features. defaults to TRUE.
@@ -60,14 +60,14 @@ calc.het.feat <- function(exprs, age, modex = c('linear','loess'),
 #'
 #' @export
 #'
-calc.het <- function(exprmat, age, age_in = c('days','years'),
-                     age_to = c('pw-0.25','years'),
-                     batch_corr = c("NC", "QN", "LR", "SVA", "LR+QN", "SVA+QN"),
-                     modex = c("linear", "loess"),
-                     tr_log2 = c(T, F), sc_features = c(T,F),
+calc.het <- function(exprmat, age, age_in = 'days',
+                     age_to = 'pw-0.25',
+                     batch_corr = "NC",
+                     modex = "linear",
+                     tr_log2 = T, sc_features = T,
                      covariates = NA,
-                     het_change_met = c("spearman","pearson","LR"),
-                     padj_met = c("fdr","BY")) {
+                     het_change_met = "spearman",
+                     padj_met = "fdr") {
     retval <- list()
     snms <- intersect(colnames(exprmat), names(age))
     retval$sampleID <- snms
