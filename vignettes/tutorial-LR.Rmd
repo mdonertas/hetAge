@@ -145,3 +145,10 @@ colnames(resx$feature_result)
 head(resx$feature_result) 
 ```
 
+# Session Info 
+
+```{r}
+options(width = 100)
+sessioninfo::session_info()
+```
+
