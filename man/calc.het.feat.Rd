@@ -4,7 +4,8 @@
 \alias{calc.het.feat}
 \title{Calculate Age-related Expression and Heterogeneity Changes for Gene}
 \usage{
-calc.het.feat(exprs, age, modex = "linear", het_change_met)
+calc.het.feat(exprs, age, modex = "linear",
+  het_change_met = "spearman")
 }
 \arguments{
 \item{exprs}{a numeric vector with the expression values, ordered the same as age vector}
@@ -20,4 +21,14 @@ a list with i) summary results with the effect size and p value for expression l
 }
 \description{
 Calculate Age-related Expression and Heterogeneity Changes for Gene
+}
+\examples{
+myexp <- rnorm(n = 20, mean = sample(1:3, 1), sd = sample(c(1, 3), 1))
+agevec <- sample(20:80,20)
+het_result <- calc.het.feat(myexp, agevec)
+head(het_result$summary) # summary statistics
+het_result$residuals # heterogeneity values: residuals
+het_result$expression  # input expression values
+all(myexp == het_result$expression)
+
 }

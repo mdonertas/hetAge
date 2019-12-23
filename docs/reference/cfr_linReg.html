@@ -144,6 +144,34 @@
     <p>a list with three elements, i) corrected expression matrix, ii) coefficients for the covariates and iii) p values for each covariate</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>myexp</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>( <span class='fl'>1</span>:<span class='fl'>10</span>, <span class='kw'>function</span>(<span class='no'>i</span>){ <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>10000</span>, <span class='kw'>mean</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>1</span>:<span class='fl'>3</span>, <span class='fl'>1</span>), <span class='kw'>sd</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>3</span>), <span class='fl'>1</span>)) })
+<span class='no'>mycov</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>batch</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>1</span>), <span class='fl'>10</span>, <span class='kw'>replace</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>))
+<span class='no'>resx</span> <span class='kw'>&lt;-</span> <span class='fu'>cfr_linReg</span>(<span class='no'>myexp</span>,<span class='no'>mycov</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>myexp</span>[<span class='fl'>1</span>:<span class='fl'>5</span>,<span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='output co'>#&gt;          [,1]      [,2]      [,3]       [,4]       [,5]
+#&gt; [1,] 3.327853 -1.933807  3.214582 -0.2793156  1.3414952
+#&gt; [2,] 1.804408  3.096114  6.207055  3.2489682 -0.7878048
+#&gt; [3,] 1.989951  3.604186  3.220499  2.8413460  3.1144246
+#&gt; [4,] 2.822292  2.778184 -2.487390  1.5423143  2.6529450
+#&gt; [5,] 1.192382 -2.589336  7.016897  2.8087686  0.7772838</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>resx</span>$<span class='no'>correctedExp</span>[<span class='fl'>1</span>:<span class='fl'>5</span>,<span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='output co'>#&gt;            [,1]       [,2]      [,3]       [,4]       [,5]
+#&gt; [1,]  3.1903319 -2.0713279  3.077061 -0.4168364 -0.1909669
+#&gt; [2,] -2.2191724 -0.9274665  2.183475 -0.7746124 -1.3373517
+#&gt; [3,] -0.3577359  1.2564986  0.872812  0.4936587  1.1698603
+#&gt; [4,]  1.6939186  1.6498107 -3.615764  0.4139409  0.9326460
+#&gt; [5,] -0.9940253 -4.7757435  4.830489  0.6223609 -0.1176258</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>resx</span>$<span class='no'>correctedExp</span>)</div><div class='output co'>#&gt; [1] 10000    10</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>resx</span>$<span class='no'>cov_coef</span>)</div><div class='output co'>#&gt;      (Intercept)        cov
+#&gt; [1,]   1.5324621 -1.3949413
+#&gt; [2,]   0.5495469  3.4740337
+#&gt; [3,]   1.9445643  0.4031230
+#&gt; [4,]   1.7202990 -0.5919256
+#&gt; [5,]   0.8949096  1.2914980
+#&gt; [6,]   0.8641718  1.9133033</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>resx</span>$<span class='no'>cov_p</span>)</div><div class='output co'>#&gt;      (Intercept)        cov
+#&gt; [1,]   0.2912556 0.41455274
+#&gt; [2,]   0.6728053 0.04908203
+#&gt; [3,]   0.0188698 0.62451397
+#&gt; [4,]   0.1057890 0.61397433
+#&gt; [5,]   0.5806840 0.50670608
+#&gt; [6,]   0.5783433 0.31454629</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -151,7 +179,9 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

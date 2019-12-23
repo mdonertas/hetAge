@@ -15,3 +15,11 @@ scaled matrix
 \description{
 Scale Expression Values for Features (probsets, transcripts, genes)
 }
+\examples{
+myexp <- t(sapply( 1:10000, function(i){ sample((0:12000)/1000,100) }))
+myexp_scaled <- feature_scale(myexp)
+par(mfrow=c(1,2))
+boxplot(t(myexp[1:10,]), main='original')
+boxplot(t(myexp_scaled[1:10,]), main = 'scaled')
+
+}

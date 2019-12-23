@@ -86,6 +86,15 @@ const.mod <- function(covs) {
 #' @return a list with three elements, i) corrected expression matrix, ii) coefficients for the covariates and iii) p values for each covariate
 #'
 #' @export
+#' @examples
+#' myexp <- sapply( 1:10, function(i){ rnorm(n = 10000, mean = sample(1:3, 1), sd = sample(c(1, 3), 1)) })
+#' mycov <- list(batch = sample(c(0, 1), 10, replace = TRUE))
+#' resx <- cfr_linReg(myexp,mycov)
+#' print(myexp[1:5,1:5])
+#' print(resx$correctedExp[1:5,1:5])
+#' dim(resx$correctedExp)
+#' head(resx$cov_coef)
+#' head(resx$cov_p)
 #'
 
 cfr_linReg <- function(mat, cov){
@@ -118,6 +127,19 @@ cfr_linReg <- function(mat, cov){
 #' @importFrom reshape2 melt
 #'
 #' @export
+#' @examples
+#' sampnames = paste('sample',1:20,sep='')
+#' myexp <- sapply( 1:20, function(i){ rnorm(n = 10000, mean = sample(1:3, 1), sd = sample(c(1, 3), 1)) })
+#' colnames(myexp) = sampnames
+#' agevec <- sample(20:80,20)
+#' names(agevec) = sampnames
+#' result_mat <- cfr_sva(myexp,agevec)
+#' print(myexp[1:5,1:5])
+#' print(result_mat$correctedExp[1:5,1:5])
+#' dim(result_mat$correctedExp)
+#' head(result_mat$SVs)
+#' head(result_mat$SV_cov_corr)
+#'
 
 
 cfr_sva <- function(mat, age, cov = NA) {
@@ -161,6 +183,12 @@ cfr_sva <- function(mat, age, cov = NA) {
 #'
 #' @return scaled matrix
 #' @export
+#' @examples
+#' myexp <- t(sapply( 1:10000, function(i){ sample((0:12000)/1000,100) }))
+#' myexp_scaled <- feature_scale(myexp)
+#' par(mfrow=c(1,2))
+#' boxplot(t(myexp[1:10,]), main='original')
+#' boxplot(t(myexp_scaled[1:10,]), main = 'scaled')
 #'
 feature_scale <- function(mat) {
     res <- t(apply(mat, 1, scale))

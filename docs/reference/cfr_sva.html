@@ -148,6 +148,38 @@
     <p>a list with i) a numeric matrix with the expression values, ii) SVs for each sample, and iii) correlation between SVs and covariates</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>sampnames</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='st'>'sample'</span>,<span class='fl'>1</span>:<span class='fl'>20</span>,<span class='kw'>sep</span><span class='kw'>=</span><span class='st'>''</span>)
+<span class='no'>myexp</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>( <span class='fl'>1</span>:<span class='fl'>20</span>, <span class='kw'>function</span>(<span class='no'>i</span>){ <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>10000</span>, <span class='kw'>mean</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>1</span>:<span class='fl'>3</span>, <span class='fl'>1</span>), <span class='kw'>sd</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>3</span>), <span class='fl'>1</span>)) })
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>myexp</span>) <span class='kw'>=</span> <span class='no'>sampnames</span>
+<span class='no'>agevec</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>20</span>:<span class='fl'>80</span>,<span class='fl'>20</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='no'>agevec</span>) <span class='kw'>=</span> <span class='no'>sampnames</span>
+<span class='no'>result_mat</span> <span class='kw'>&lt;-</span> <span class='fu'>cfr_sva</span>(<span class='no'>myexp</span>,<span class='no'>agevec</span>)</div><div class='output co'>#&gt; Number of significant surrogate variables is:  8 
+#&gt; Iteration (out of 5 ):1  2  3  4  5  </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>myexp</span>[<span class='fl'>1</span>:<span class='fl'>5</span>,<span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='output co'>#&gt;        sample1  sample2    sample3  sample4      sample5
+#&gt; [1,] 1.6344855 2.152249  0.9867031 2.792520 -0.005623023
+#&gt; [2,] 0.8613537 1.892670 -1.0850652 2.221501  3.618923469
+#&gt; [3,] 1.9471171 2.165830  1.4713725 3.014678  3.388419345
+#&gt; [4,] 1.6430524 3.431929  1.0257522 2.897891  1.571431039
+#&gt; [5,] 1.3218842 2.877333  0.2430339 2.741432  5.385300746</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>result_mat</span>$<span class='no'>correctedExp</span>[<span class='fl'>1</span>:<span class='fl'>5</span>,<span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='output co'>#&gt;         sample1     sample2     sample3    sample4      sample5
+#&gt; [1,] -0.3679575  0.10686609 -0.03129762 -0.2271763 -0.014059469
+#&gt; [2,] -1.0878495 -0.04840652 -1.62329177 -1.0601329  0.016051265
+#&gt; [3,] -0.7078149 -0.46955222  0.27452364 -1.0419228 -0.026707695
+#&gt; [4,] -0.2078332  1.54909703 -0.24695464  0.4203431 -0.005673507
+#&gt; [5,] -0.9584203  0.61369261 -0.98971666 -0.5536472 -0.006003883</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span>(<span class='no'>result_mat</span>$<span class='no'>correctedExp</span>)</div><div class='output co'>#&gt; [1] 10000    20</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>result_mat</span>$<span class='no'>SVs</span>)</div><div class='output co'>#&gt;                SV_1          SV_2         SV_3          SV_4          SV_5
+#&gt; sample1  0.01852815 -3.339818e-03  0.005042591  0.0100746681 -0.0060938556
+#&gt; sample2  0.01638531 -2.279730e-06  0.009879715  0.0012308819 -0.0005983815
+#&gt; sample3 -0.18678370 -3.979141e-03  0.010207727  0.0004481191 -0.0061359900
+#&gt; sample4  0.22052090 -7.401643e-03  0.006720401  0.0084531081  0.0065031948
+#&gt; sample5  0.03912771 -1.516710e-01 -0.076601154 -0.3557168208  0.5687845492
+#&gt; sample6  0.04714716  5.161590e-01  0.694451702 -0.2609277419 -0.1656813638
+#&gt;                 SV_6       SV_7         SV_8
+#&gt; sample1 -0.005255565 -0.1538935 -0.041312445
+#&gt; sample2 -0.002327802 -0.1579122 -0.031283564
+#&gt; sample3 -0.008249627 -0.1011968 -0.391975117
+#&gt; sample4  0.006643142 -0.2231104  0.313830686
+#&gt; sample5  0.615475843  0.3008639  0.006176108
+#&gt; sample6 -0.024525553  0.3186825  0.035075428</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>result_mat</span>$<span class='no'>SV_cov_corr</span>)</div><div class='output co'>#&gt; NULL</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -155,7 +187,9 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

@@ -124,7 +124,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>calc.het.feat</span>(<span class='no'>exprs</span>, <span class='no'>age</span>, <span class='kw'>modex</span> <span class='kw'>=</span> <span class='st'>"linear"</span>, <span class='no'>het_change_met</span>)</pre>
+    <pre class="usage"><span class='fu'>calc.het.feat</span>(<span class='no'>exprs</span>, <span class='no'>age</span>, <span class='kw'>modex</span> <span class='kw'>=</span> <span class='st'>"linear"</span>,
+  <span class='kw'>het_change_met</span> <span class='kw'>=</span> <span class='st'>"spearman"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -152,6 +153,24 @@
     <p>a list with i) summary results with the effect size and p value for expression level and heterogeneity changes, ii) residuals from expr~age model, which corresponds to unexplained variance, iii) expression values passed into the function.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>myexp</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>mean</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>1</span>:<span class='fl'>3</span>, <span class='fl'>1</span>), <span class='kw'>sd</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>3</span>), <span class='fl'>1</span>))
+<span class='no'>agevec</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>20</span>:<span class='fl'>80</span>,<span class='fl'>20</span>)
+<span class='no'>het_result</span> <span class='kw'>&lt;-</span> <span class='fu'>calc.het.feat</span>(<span class='no'>myexp</span>, <span class='no'>agevec</span>)
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>het_result</span>$<span class='no'>summary</span>) <span class='co'># summary statistics</span></div><div class='output co'>#&gt;           level_change         level_change.p   heterogeneity_change 
+#&gt;            -0.01170475             0.39934927            -0.31578947 
+#&gt; heterogeneity_change.p 
+#&gt;             0.17475514 </div><div class='input'><span class='no'>het_result</span>$<span class='no'>residuals</span> <span class='co'># heterogeneity values: residuals</span></div><div class='output co'>#&gt;           1           2           3           4           5           6 
+#&gt;  0.73012526  0.30974591 -0.84031662  0.48001273  0.90223371 -0.62179067 
+#&gt;           7           8           9          10          11          12 
+#&gt; -0.42494927  0.40972535 -0.71218218 -0.05164055  1.33004567 -1.38672970 
+#&gt;          13          14          15          16          17          18 
+#&gt; -0.98912304 -0.22761943 -0.07869377 -1.38801342  1.81355618 -1.29152474 
+#&gt;          19          20 
+#&gt;  0.90135427  1.13578429 </div><div class='input'><span class='no'>het_result</span>$<span class='no'>expression</span>  <span class='co'># input expression values</span></div><div class='output co'>#&gt;  [1] 4.104436 3.426553 2.370128 3.713867 3.855174 2.225807 2.364125 3.163685
+#&gt;  [9] 2.580196 2.819367 4.353214 1.659849 1.905294 2.573159 2.921066 1.775612
+#&gt; [17] 4.696268 1.907215 3.994752 4.498391</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/all.html'>all</a></span>(<span class='no'>myexp</span> <span class='kw'>==</span> <span class='no'>het_result</span>$<span class='no'>expression</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -159,7 +178,9 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

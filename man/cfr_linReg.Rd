@@ -17,3 +17,14 @@ a list with three elements, i) corrected expression matrix, ii) coefficients for
 \description{
 Removing Confounding Factor Effects using Linear Regression
 }
+\examples{
+myexp <- sapply( 1:10, function(i){ rnorm(n = 10000, mean = sample(1:3, 1), sd = sample(c(1, 3), 1)) })
+mycov <- list(batch = sample(c(0, 1), 10, replace = TRUE))
+resx <- cfr_linReg(myexp,mycov)
+print(myexp[1:5,1:5])
+print(resx$correctedExp[1:5,1:5])
+dim(resx$correctedExp)
+head(resx$cov_coef)
+head(resx$cov_p)
+
+}

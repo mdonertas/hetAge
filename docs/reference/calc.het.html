@@ -183,6 +183,32 @@
     <p>a list object with summary results including expression level and heterogeneity changes, input values, intermediate values, and heterogeneity matrix.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>sampnames</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='st'>'sample'</span>,<span class='fl'>1</span>:<span class='fl'>20</span>,<span class='kw'>sep</span><span class='kw'>=</span><span class='st'>''</span>)
+<span class='no'>myexp</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>( <span class='fl'>1</span>:<span class='fl'>20</span>, <span class='kw'>function</span>(<span class='no'>i</span>){ <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>10000</span>, <span class='kw'>mean</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>1</span>:<span class='fl'>3</span>, <span class='fl'>1</span>), <span class='kw'>sd</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>3</span>), <span class='fl'>1</span>)) })
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>myexp</span>) <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='st'>'gene'</span>, <span class='fl'>1</span>:<span class='fl'>10000</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>''</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>myexp</span>) <span class='kw'>=</span> <span class='no'>sampnames</span>
+<span class='no'>agevec</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>20</span>:<span class='fl'>80</span>,<span class='fl'>20</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='no'>agevec</span>) <span class='kw'>=</span> <span class='no'>sampnames</span>
+<span class='no'>het_result</span> <span class='kw'>&lt;-</span> <span class='fu'>calc.het</span>(<span class='no'>myexp</span>, <span class='no'>agevec</span>, <span class='kw'>age_in</span> <span class='kw'>=</span> <span class='st'>'years'</span>, <span class='kw'>tr_log2</span> <span class='kw'>=</span> <span class='no'>F</span>)
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>het_result</span>$<span class='no'>sampleID</span>)</div><div class='output co'>#&gt; [1] "sample1" "sample2" "sample3" "sample4" "sample5" "sample6"</div><div class='input'><span class='no'>het_result</span>$<span class='no'>input_expr</span>[<span class='fl'>1</span>:<span class='fl'>5</span>,<span class='fl'>1</span>:<span class='fl'>5</span>] <span class='co'># expression values used as input</span></div><div class='output co'>#&gt;          sample1     sample2  sample3    sample4   sample5
+#&gt; gene1  1.2553171 -0.03420972 3.982986  5.9166836 5.5795243
+#&gt; gene2 -1.4372636  2.11799795 3.182873 -0.2971363 0.4746558
+#&gt; gene3  0.9944287  1.09024025 3.763126  4.1899031 0.5553416
+#&gt; gene4  1.6215527  3.72192036 3.442878  0.2738125 0.3384015
+#&gt; gene5  2.1484116  3.38209142 4.229840  1.9197492 2.2381836</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>het_result</span>$<span class='no'>input_age</span>) <span class='co'># input ages</span></div><div class='output co'>#&gt; sample1 sample2 sample3 sample4 sample5 sample6 
+#&gt;      30      27      20      39      51      36 </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>het_result</span>$<span class='no'>usedAge</span>) <span class='co'># ages used in calculations - transformation is applied using 'age_to' parameter</span></div><div class='output co'>#&gt;   sample1   sample2   sample3   sample4   sample5   sample6 
+#&gt; 10.229479  9.963551  9.243378 10.922935 11.680616 10.706533 </div><div class='input'><span class='no'>het_result</span>$<span class='no'>resid_mat</span>[<span class='fl'>1</span>:<span class='fl'>5</span>,<span class='fl'>1</span>:<span class='fl'>5</span>] <span class='co'># heterogeneity values (residual matrix)</span></div><div class='output co'>#&gt; NULL</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>het_result</span>$<span class='no'>feature_result</span>) <span class='co'># summary statistics</span></div><div class='output co'>#&gt; # A tibble: 6 x 7
+#&gt;   feature level_change level_change.p heterogeneity_c… heterogeneity_c…
+#&gt;   &lt;chr&gt;          &lt;dbl&gt;          &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+#&gt; 1 gene1        0.0610           0.786          -0.0466           0.846 
+#&gt; 2 gene2        0.00514          0.982           0.517            0.0210
+#&gt; 3 gene3       -0.00507          0.982           0.180            0.445 
+#&gt; 4 gene4        0.171            0.443           0.310            0.183 
+#&gt; 5 gene5        0.0390           0.862           0.149            0.530 
+#&gt; 6 gene6        0.140            0.531           0.125            0.599 
+#&gt; # … with 2 more variables: level_change.p.adj &lt;dbl&gt;,
+#&gt; #   heterogeneity_change.p.adj &lt;dbl&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -190,7 +216,9 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

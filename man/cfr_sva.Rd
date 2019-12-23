@@ -19,3 +19,17 @@ a list with i) a numeric matrix with the expression values, ii) SVs for each sam
 \description{
 Removing Confounding Factor Effects using SVA
 }
+\examples{
+sampnames = paste('sample',1:20,sep='')
+myexp <- sapply( 1:20, function(i){ rnorm(n = 10000, mean = sample(1:3, 1), sd = sample(c(1, 3), 1)) })
+colnames(myexp) = sampnames
+agevec <- sample(20:80,20)
+names(agevec) = sampnames
+result_mat <- cfr_sva(myexp,agevec)
+print(myexp[1:5,1:5])
+print(result_mat$correctedExp[1:5,1:5])
+dim(result_mat$correctedExp)
+head(result_mat$SVs)
+head(result_mat$SV_cov_corr)
+
+}

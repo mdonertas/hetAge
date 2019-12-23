@@ -38,3 +38,18 @@ a list object with summary results including expression level and heterogeneity 
 \description{
 Calculate Age-related Expression and Heterogeneity Changes
 }
+\examples{
+sampnames = paste('sample',1:20,sep='')
+myexp <- sapply( 1:20, function(i){ rnorm(n = 10000, mean = sample(1:3, 1), sd = sample(c(1, 3), 1)) })
+rownames(myexp) = paste('gene', 1:10000, sep = '')
+colnames(myexp) = sampnames
+agevec <- sample(20:80,20)
+names(agevec) = sampnames
+het_result <- calc.het(myexp, agevec, age_in = 'years', tr_log2 = F)
+head(het_result$sampleID)
+het_result$input_expr[1:5,1:5] # expression values used as input
+head(het_result$input_age) # input ages
+head(het_result$usedAge) # ages used in calculations - transformation is applied using 'age_to' parameter
+het_result$resid_mat[1:5,1:5] # heterogeneity values (residual matrix)
+head(het_result$feature_result) # summary statistics
+}

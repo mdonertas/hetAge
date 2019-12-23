@@ -1,3 +1,7 @@
+---
+output: github_document
+---
+
 # hetAge: Age-related Heterogeneity in Gene Expression
 
 A collection of functions to analyse the age-related changes in gene expression level and heterogeneity.
@@ -7,3 +11,4 @@ A collection of functions to analyse the age-related changes in gene expression 
 ```{r, eval=F}
 devtools::install_github("mdonertas/hetAge")
 ```
+

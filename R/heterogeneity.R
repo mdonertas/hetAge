@@ -7,9 +7,17 @@
 #'
 #' @return a list with i) summary results with the effect size and p value for expression level and heterogeneity changes, ii) residuals from expr~age model, which corresponds to unexplained variance, iii) expression values passed into the function.
 #' @export
+#' @examples
+#' myexp <- rnorm(n = 20, mean = sample(1:3, 1), sd = sample(c(1, 3), 1))
+#' agevec <- sample(20:80,20)
+#' het_result <- calc.het.feat(myexp, agevec)
+#' head(het_result$summary) # summary statistics
+#' het_result$residuals # heterogeneity values: residuals
+#' het_result$expression  # input expression values
+#' all(myexp == het_result$expression)
 #'
 calc.het.feat <- function(exprs, age, modex = 'linear',
-                          het_change_met) {
+                          het_change_met = 'spearman') {
     if ( modex == 'linear') {
         lmx <- lm(exprs ~ age)
         expr_change <- unname(lmx$coef[2])
@@ -59,7 +67,21 @@ calc.het.feat <- function(exprs, age, modex = 'linear',
 #' @importFrom dplyr everything
 #'
 #' @export
-#'
+#' @examples
+#' sampnames = paste('sample',1:20,sep='')
+#' myexp <- sapply( 1:20, function(i){ rnorm(n = 10000, mean = sample(1:3, 1), sd = sample(c(1, 3), 1)) })
+#' rownames(myexp) = paste('gene', 1:10000, sep = '')
+#' colnames(myexp) = sampnames
+#' agevec <- sample(20:80,20)
+#' names(agevec) = sampnames
+#' het_result <- calc.het(myexp, agevec, age_in = 'years', tr_log2 = F)
+#' head(het_result$sampleID)
+#' het_result$input_expr[1:5,1:5] # expression values used as input
+#' head(het_result$input_age) # input ages
+#' head(het_result$usedAge) # ages used in calculations - transformation is applied using 'age_to' parameter
+#' het_result$resid_mat[1:5,1:5] # heterogeneity values (residual matrix)
+#' head(het_result$feature_result) # summary statistics
+
 calc.het <- function(exprmat, age, age_in = 'days',
                      age_to = 'pw-0.25',
                      batch_corr = "NC",
