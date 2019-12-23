@@ -1,0 +1,531 @@
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Colantuoni2011_PFC_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_A1C_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_AMY_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_CBC_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_DFC_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_HIP_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_IPC_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_ITC_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_M1C_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_MD_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_MFC_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_OFC_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_S1C_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_STC_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_STR_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_V1C_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_VFC_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Somel2010_PFC_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Somel2011_CBC_age"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Colantuoni2011_PFC_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_A1C_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_AMY_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_CBC_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_DFC_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_HIP_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_IPC_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_ITC_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_M1C_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_MD_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_MFC_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_OFC_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_S1C_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_STC_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_STR_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_V1C_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Kang2011_VFC_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Somel2010_PFC_dev"
+
+#' Expression data and ages for the datasets used in Isildak et al 2020
+#'
+#' SummarizedExperiment Objects including data used in Isildak et al 2020 paper analyzing age-related gene expression heterogeneity.
+#'
+#' @format 38 SummarizedExperiment objects of varying dimensions.
+#' RMA correction (using the ‘oligo’ library in R) and log2 transformation were applied to Somel2011 and Kang2011 datasets. For the Colantuoni2011 dataset, as there was no public R package to analyze the raw data, we used the preprocessed data deposited in GEO, which had been loess normalized by the authors. We applied a correction procedure for Somel2011 datasets, in which there was a batch effect influencing the expression levels, as follows: for each probeset (1) calculate mean expression (M), (2) scale each batch separately (to mean = 0, standard deviation = 1), (3) add M to each value. We excluded outliers given in Supplementary Table S1 of the paper, through a visual inspection of the first two principal components for the probeset expression levels. Objects are named as "DataSource_BrainRegion_Period", where the period is either development (dev; 0-20 years of age) or aging (age; 20+ years of age)
+#' @source \url{https://www.biorxiv.org/content/10.1101/595249v4}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30272}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE25219}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22569}
+#' \url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18069}
+#'
+"Somel2011_CBC_dev"

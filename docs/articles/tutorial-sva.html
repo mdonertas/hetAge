@@ -170,7 +170,7 @@
 <a class="sourceLine" id="cb2-10" data-line-number="10">  <span class="dt">covariates =</span> covs, <span class="co"># covariates</span></a>
 <a class="sourceLine" id="cb2-11" data-line-number="11">  <span class="dt">het_change_met =</span> <span class="st">'spearman'</span>, <span class="co"># method to measure change in heterogeneity</span></a>
 <a class="sourceLine" id="cb2-12" data-line-number="12">  <span class="dt">padj_met =</span> <span class="st">'fdr'</span>) <span class="co"># multiple test correction method</span></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt; Number of significant surrogate variables is:  12 </span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt; Number of significant surrogate variables is:  13 </span></a>
 <a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt; Iteration (out of 5 ):1  2  3  4  5</span></a></code></pre></div>
 </div>
 <div id="result-object" class="section level1">
@@ -187,12 +187,18 @@
 <h2 class="hasAnchor">
 <a href="#the-expression-matrix-inputted-in-the-first-place-only-including-the-samples-used-in-the-analysis-" class="anchor"></a>The expression matrix inputted in the first place, only including the samples used in the analysis.</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">resx<span class="op">$</span>input_expr[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt;                     GSM750020   GSM750021  GSM750022  GSM750023  GSM750024</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; HEEBO-047-HCC47P10 -0.6987543 -0.47499356 -0.3292548 -0.7726403  0.4209578</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; HEEBO-025-HCC25H3   0.1330530  0.09050900 -0.2058823 -0.4352658 -0.5848500</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; HEEBO-089-HCA89D4  -0.5388027 -0.28693252 -0.3244207 -0.4933443 -0.4720521</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; HEEBO-049-HCC49D9  -0.3546039 -1.38471507 -0.5867178 -0.5526247 -1.3892504</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; HEEBO-062-HCC62N7   0.3658152 -0.01564966  0.2954370  0.3654406  0.2269234</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt;                       GSM750020   GSM750021  GSM750022    GSM750023</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; HEEBO-061-HCC61N21  -0.15982372 -0.02276168  0.1272045  0.023611719</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; HEEBO-102-HCA102D22 -0.18100484 -0.28777702 -0.2552695 -0.173751581</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; HEEBO-047-HCC47B24  -0.47989847 -0.85685444 -0.3216806 -0.882169534</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; HEEBO-106-HCA106L3   0.08019429 -0.07902049  0.2043889 -0.471822227</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; HEEBO-028-HCC28L24  -0.46115002 -0.45147979 -0.4818411  0.000636905</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt;                       GSM750024</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; HEEBO-061-HCC61N21  -0.51630640</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; HEEBO-102-HCA102D22 -0.15987009</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; HEEBO-047-HCC47B24  -0.06825152</span></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; HEEBO-106-HCA106L3   0.07156304</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; HEEBO-028-HCC28L24  -0.43393269</span></a></code></pre></div>
 </div>
 <div id="the-ages-in-the-original-format-including-only-the-samples-used-in-the-analysis" class="section level2">
 <h2 class="hasAnchor">
@@ -231,44 +237,44 @@
 <a href="#expression-matrix-after-correcting-for-confounding-factors" class="anchor"></a>Expression matrix after correcting for confounding factors</h2>
 <p>These are the expression values for the probesets after accounting for the predicting confounding factors, i.e. SVs</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">resx<span class="op">$</span>sva_res<span class="op">$</span>correctedExp[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt;                      GSM750020    GSM750021   GSM750022   GSM750023</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; HEEBO-047-HCC47P10 -0.20473171 -0.006882009 -0.03002957 -0.07391363</span></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt; HEEBO-025-HCC25H3   0.30748890  0.193962156  0.08825709  0.32520894</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt; HEEBO-089-HCA89D4  -0.21323670 -0.358417612 -0.17311280 -0.23735110</span></a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#&gt; HEEBO-049-HCC49D9   0.07599951  0.061184397  0.10763035  0.33840756</span></a>
-<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#&gt; HEEBO-062-HCC62N7  -0.03928495 -0.011201354  0.05632786 -0.02057560</span></a>
-<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="co">#&gt;                      GSM750024</span></a>
-<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co">#&gt; HEEBO-047-HCC47P10  0.05415867</span></a>
-<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co">#&gt; HEEBO-025-HCC25H3   0.16382068</span></a>
-<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="co">#&gt; HEEBO-089-HCA89D4  -0.43983204</span></a>
-<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co">#&gt; HEEBO-049-HCC49D9  -0.08059123</span></a>
-<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="co">#&gt; HEEBO-062-HCC62N7  -0.15780925</span></a></code></pre></div>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt;                        GSM750020   GSM750021   GSM750022   GSM750023</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; HEEBO-061-HCC61N21  -0.293686847 -0.03443580  0.06500429  0.02550782</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt; HEEBO-102-HCA102D22  0.024167087 -0.03964470 -0.10026825 -0.06085823</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt; HEEBO-047-HCC47B24  -0.026048980  0.01278524  0.06674873 -0.07920790</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#&gt; HEEBO-106-HCA106L3  -0.002857664 -0.08452609  0.20304439 -0.71877986</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#&gt; HEEBO-028-HCC28L24  -0.018982225  0.02860374 -0.01712515  0.14816464</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="co">#&gt;                       GSM750024</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co">#&gt; HEEBO-061-HCC61N21  -0.21266046</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co">#&gt; HEEBO-102-HCA102D22 -0.12521379</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="co">#&gt; HEEBO-047-HCC47B24   0.48018876</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co">#&gt; HEEBO-106-HCA106L3   0.14308091</span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="co">#&gt; HEEBO-028-HCC28L24   0.08136614</span></a></code></pre></div>
 </div>
 <div id="svs-predicted-by-sva" class="section level2">
 <h2 class="hasAnchor">
 <a href="#svs-predicted-by-sva" class="anchor"></a>SVs predicted by SVA</h2>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(resx<span class="op">$</span>sva_res<span class="op">$</span>SVs)</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt;                  SV_1        SV_2        SV_3        SV_4         SV_5</span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co">#&gt; GSM750020  0.03768288  0.01097143 -0.01387230  0.18099781 -0.043678148</span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt; GSM750021 -0.01410889  0.11266400  0.12854782 -0.11274937  0.097467266</span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt; GSM750022  0.05198845  0.07154513 -0.04892692  0.02647289 -0.016724410</span></a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; GSM750023  0.03024231 -0.04981000  0.06766320 -0.06108306  0.067474314</span></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; GSM750024 -0.09988350  0.01160314 -0.03993844 -0.15240594  0.007155012</span></a>
-<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt; GSM750025  0.01973783  0.04443118  0.07027624  0.08132983  0.058839844</span></a>
-<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt;                  SV_6        SV_7         SV_8         SV_9       SV_10</span></a>
-<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co">#&gt; GSM750020  0.12496741 -0.00451065 -0.030754897  0.010953854 -0.02102812</span></a>
-<a class="sourceLine" id="cb9-11" data-line-number="11"><span class="co">#&gt; GSM750021  0.04683176  0.04540770  0.029922165 -0.059323019  0.01324083</span></a>
-<a class="sourceLine" id="cb9-12" data-line-number="12"><span class="co">#&gt; GSM750022  0.04552896  0.08694592  0.004249841  0.085339625  0.07087497</span></a>
-<a class="sourceLine" id="cb9-13" data-line-number="13"><span class="co">#&gt; GSM750023  0.01100464 -0.15360793 -0.012010205  0.007337263  0.09559169</span></a>
-<a class="sourceLine" id="cb9-14" data-line-number="14"><span class="co">#&gt; GSM750024 -0.10657733 -0.05785978 -0.001926284 -0.012034175 -0.12428494</span></a>
-<a class="sourceLine" id="cb9-15" data-line-number="15"><span class="co">#&gt; GSM750025  0.03406501 -0.02212302  0.036992914 -0.117292362  0.06878824</span></a>
-<a class="sourceLine" id="cb9-16" data-line-number="16"><span class="co">#&gt;                  SV_11       SV_12</span></a>
-<a class="sourceLine" id="cb9-17" data-line-number="17"><span class="co">#&gt; GSM750020  0.012729969 -0.01588686</span></a>
-<a class="sourceLine" id="cb9-18" data-line-number="18"><span class="co">#&gt; GSM750021 -0.034154136 -0.02329884</span></a>
-<a class="sourceLine" id="cb9-19" data-line-number="19"><span class="co">#&gt; GSM750022 -0.063567831 -0.05107659</span></a>
-<a class="sourceLine" id="cb9-20" data-line-number="20"><span class="co">#&gt; GSM750023  0.014629907  0.02692112</span></a>
-<a class="sourceLine" id="cb9-21" data-line-number="21"><span class="co">#&gt; GSM750024 -0.119615689 -0.04474837</span></a>
-<a class="sourceLine" id="cb9-22" data-line-number="22"><span class="co">#&gt; GSM750025  0.005573435  0.05596549</span></a></code></pre></div>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt;                    SV_1         SV_2         SV_3          SV_4</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co">#&gt; GSM750020  0.0346994348  0.037234239 -0.002764006  0.0832841213</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt; GSM750021  0.0007390082  0.007756226 -0.162194873 -0.0942619459</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt; GSM750022  0.0455655501  0.100167614  0.009514200 -0.0008989108</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; GSM750023  0.0325279670 -0.076885204 -0.009599594  0.0575396508</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; GSM750024 -0.0899385792  0.012947531  0.015705342  0.0182699830</span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt; GSM750025  0.0419396656  0.001964527 -0.063628792  0.0570792789</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt;                  SV_5        SV_6         SV_7        SV_8         SV_9</span></a>
+<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co">#&gt; GSM750020 -0.10355219  0.16021768 -0.026520677  0.04613517  0.011394501</span></a>
+<a class="sourceLine" id="cb9-11" data-line-number="11"><span class="co">#&gt; GSM750021  0.16886561  0.02775811 -0.008468507 -0.02687718 -0.006485861</span></a>
+<a class="sourceLine" id="cb9-12" data-line-number="12"><span class="co">#&gt; GSM750022 -0.03615539  0.06663396 -0.007223054  0.03324283 -0.115411146</span></a>
+<a class="sourceLine" id="cb9-13" data-line-number="13"><span class="co">#&gt; GSM750023  0.08406153 -0.04485029 -0.082966297  0.05408930  0.026193023</span></a>
+<a class="sourceLine" id="cb9-14" data-line-number="14"><span class="co">#&gt; GSM750024  0.15082386 -0.17095231 -0.026037002 -0.04931282 -0.042073897</span></a>
+<a class="sourceLine" id="cb9-15" data-line-number="15"><span class="co">#&gt; GSM750025  0.01684135  0.06973946  0.047609845 -0.05544381  0.130400397</span></a>
+<a class="sourceLine" id="cb9-16" data-line-number="16"><span class="co">#&gt;                  SV_10        SV_11        SV_12        SV_13</span></a>
+<a class="sourceLine" id="cb9-17" data-line-number="17"><span class="co">#&gt; GSM750020 -0.019410589  0.038036938 -0.013766783  0.058036733</span></a>
+<a class="sourceLine" id="cb9-18" data-line-number="18"><span class="co">#&gt; GSM750021 -0.042500309 -0.006512615 -0.008539760 -0.034500796</span></a>
+<a class="sourceLine" id="cb9-19" data-line-number="19"><span class="co">#&gt; GSM750022  0.002178357 -0.083902979 -0.024619311 -0.042476277</span></a>
+<a class="sourceLine" id="cb9-20" data-line-number="20"><span class="co">#&gt; GSM750023  0.158469091  0.041867156 -0.045151604  0.018938678</span></a>
+<a class="sourceLine" id="cb9-21" data-line-number="21"><span class="co">#&gt; GSM750024 -0.134846240 -0.070903135  0.105112716  0.002584345</span></a>
+<a class="sourceLine" id="cb9-22" data-line-number="22"><span class="co">#&gt; GSM750025  0.030464130 -0.046683285  0.001020397  0.064920986</span></a></code></pre></div>
 </div>
 <div id="correlation-between-known-potential-confounders-and-predicted-svs" class="section level2">
 <h2 class="hasAnchor">
@@ -286,44 +292,44 @@
 <tbody>
 <tr class="odd">
 <td align="left">array.1</td>
-<td align="right">-0.0129399</td>
-<td align="right">0.7196598</td>
-<td align="right">0.9922611</td>
+<td align="right">-0.0096322</td>
+<td align="right">0.7845833</td>
+<td align="right">0.9728497</td>
 <td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">array.10</td>
-<td align="right">-0.0179185</td>
-<td align="right">0.6193525</td>
-<td align="right">0.9922611</td>
+<td align="right">-0.0171201</td>
+<td align="right">0.6272674</td>
+<td align="right">0.9728497</td>
 <td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">array.11</td>
-<td align="right">-0.0706537</td>
-<td align="right">0.0570425</td>
-<td align="right">0.4183117</td>
+<td align="right">-0.0764046</td>
+<td align="right">0.0355621</td>
+<td align="right">0.2607888</td>
 <td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">array.12</td>
-<td align="right">-0.0291171</td>
-<td align="right">0.4953505</td>
-<td align="right">0.9922611</td>
+<td align="right">-0.0365534</td>
+<td align="right">0.3814957</td>
+<td align="right">0.9728497</td>
 <td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">array.13</td>
-<td align="right">-0.1616336</td>
-<td align="right">0.0000213</td>
-<td align="right">0.0004687</td>
+<td align="right">-0.1608433</td>
+<td align="right">0.0000155</td>
+<td align="right">0.0001701</td>
 <td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">array.14</td>
-<td align="right">-0.0647107</td>
-<td align="right">0.1905612</td>
-<td align="right">0.8384691</td>
+<td align="right">-0.0751504</td>
+<td align="right">0.1204429</td>
+<td align="right">0.6624359</td>
 <td align="right">1</td>
 </tr>
 </tbody>
@@ -334,30 +340,36 @@
 <a href="#the-expression-level-matrix-used-for-modeling" class="anchor"></a>The expression level matrix used for modeling</h2>
 <p>This is the matrix used to model age-related expression change - the reason it is different from corrected matrix is because we may further scale the expression level for the features (‘sc_features’ parameter.)</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">resx<span class="op">$</span>usedMat[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co">#&gt;                     GSM750020   GSM750021  GSM750022  GSM750023  GSM750024</span></a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt; HEEBO-047-HCC47P10 -1.0063141  0.01497487 -0.1452718 -0.3448385  0.2334764</span></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt; HEEBO-025-HCC25H3   0.8461622  0.47123693  0.2734066  0.8347673  0.3597879</span></a>
-<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt; HEEBO-089-HCA89D4  -1.1147587 -1.44097211 -0.9966456 -1.0985791 -1.6560497</span></a>
-<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt; HEEBO-049-HCC49D9   0.2504870  0.30704280  0.5746589  1.5386543 -0.2032853</span></a>
-<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">#&gt; HEEBO-062-HCC62N7  -0.5561107  0.05905072  0.6935415 -0.1567896 -0.9643546</span></a></code></pre></div>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co">#&gt;                       GSM750020   GSM750021  GSM750022  GSM750023</span></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt; HEEBO-061-HCC61N21  -1.80644044 -0.24270914  0.4934951  0.1778693</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt; HEEBO-102-HCA102D22  0.17093009 -0.28870845 -1.0469983 -0.3728139</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt; HEEBO-047-HCC47B24  -0.17096598  0.06361206  0.4396010 -0.3427587</span></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt; HEEBO-106-HCA106L3  -0.04112608 -0.43254422  1.2860577 -3.5925692</span></a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">#&gt; HEEBO-028-HCC28L24  -0.15659489  0.13255147 -0.1539256  0.7504844</span></a>
+<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="co">#&gt;                      GSM750024</span></a>
+<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="co">#&gt; HEEBO-061-HCC61N21  -1.0882908</span></a>
+<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co">#&gt; HEEBO-102-HCA102D22 -0.7066414</span></a>
+<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="co">#&gt; HEEBO-047-HCC47B24   2.0832301</span></a>
+<a class="sourceLine" id="cb11-12" data-line-number="12"><span class="co">#&gt; HEEBO-106-HCA106L3   0.6785089</span></a>
+<a class="sourceLine" id="cb11-13" data-line-number="13"><span class="co">#&gt; HEEBO-028-HCC28L24   0.4092919</span></a></code></pre></div>
 </div>
 <div id="residuals-from-the-model-between-expression-level-and-age" class="section level2">
 <h2 class="hasAnchor">
 <a href="#residuals-from-the-model-between-expression-level-and-age" class="anchor"></a>Residuals from the model between expression level and age</h2>
 <p>Absolute values of this matrix can be considered as the level of heterogeneity for each gene, each sample.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">resx<span class="op">$</span>residMat[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co">#&gt;                     GSM750020   GSM750021   GSM750022   GSM750023</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co">#&gt; HEEBO-047-HCC47P10 -0.8038263  0.21070180  0.04954686 -0.15099029</span></a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="co">#&gt; HEEBO-025-HCC25H3   0.5039297  0.14043123 -0.05586395  0.50713683</span></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="co">#&gt; HEEBO-089-HCA89D4  -0.7522403 -1.09055789 -0.64785752 -0.75152829</span></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="co">#&gt; HEEBO-049-HCC49D9  -0.1432090 -0.07350817  0.19587391  1.16175600</span></a>
-<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co">#&gt; HEEBO-062-HCC62N7  -0.4119303  0.19841712  0.83226115 -0.01876096</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co">#&gt;                       GSM750020   GSM750021  GSM750022  GSM750023</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co">#&gt; HEEBO-061-HCC61N21  -1.62032369 -0.06280664  0.6725628  0.3560450</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="co">#&gt; HEEBO-102-HCA102D22  0.11120440 -0.34643996 -1.1044619 -0.4299913</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="co">#&gt; HEEBO-047-HCC47B24   0.02382118  0.25189547  0.6270107 -0.1562825</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="co">#&gt; HEEBO-106-HCA106L3   0.12499559 -0.27196918  1.4458876 -3.4335354</span></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co">#&gt; HEEBO-028-HCC28L24  -0.32490066 -0.03013475 -0.3158568  0.5893597</span></a>
 <a class="sourceLine" id="cb12-8" data-line-number="8"><span class="co">#&gt;                      GSM750024</span></a>
-<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="co">#&gt; HEEBO-047-HCC47P10  0.42645370</span></a>
-<a class="sourceLine" id="cb12-10" data-line-number="10"><span class="co">#&gt; HEEBO-025-HCC25H3   0.03362938</span></a>
-<a class="sourceLine" id="cb12-11" data-line-number="11"><span class="co">#&gt; HEEBO-089-HCA89D4  -1.31055813</span></a>
-<a class="sourceLine" id="cb12-12" data-line-number="12"><span class="co">#&gt; HEEBO-049-HCC49D9  -0.57849032</span></a>
-<a class="sourceLine" id="cb12-13" data-line-number="13"><span class="co">#&gt; HEEBO-062-HCC62N7  -0.82694602</span></a></code></pre></div>
+<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="co">#&gt; HEEBO-061-HCC61N21  -0.9109156</span></a>
+<a class="sourceLine" id="cb12-10" data-line-number="10"><span class="co">#&gt; HEEBO-102-HCA102D22 -0.7635619</span></a>
+<a class="sourceLine" id="cb12-11" data-line-number="11"><span class="co">#&gt; HEEBO-047-HCC47B24   2.2688685</span></a>
+<a class="sourceLine" id="cb12-12" data-line-number="12"><span class="co">#&gt; HEEBO-106-HCA106L3   0.8368282</span></a>
+<a class="sourceLine" id="cb12-13" data-line-number="13"><span class="co">#&gt; HEEBO-028-HCC28L24   0.2488911</span></a></code></pre></div>
 </div>
 <div id="data-frame-with-the-summaries-of-age-related-changes-in-expression-level-and-heterogeneity" class="section level2">
 <h2 class="hasAnchor">
@@ -371,12 +383,12 @@
 <a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co">#&gt; # A tibble: 6 x 7</span></a>
 <a class="sourceLine" id="cb13-8" data-line-number="8"><span class="co">#&gt;   feature level_change level_change.p heterogeneity_c… heterogeneity_c…</span></a>
 <a class="sourceLine" id="cb13-9" data-line-number="9"><span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt;          &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="co">#&gt; 1 HEEBO-…       0.106          0.223            0.0799           0.334 </span></a>
-<a class="sourceLine" id="cb13-11" data-line-number="11"><span class="co">#&gt; 2 HEEBO-…      -0.179          0.0385           0.170            0.0389</span></a>
-<a class="sourceLine" id="cb13-12" data-line-number="12"><span class="co">#&gt; 3 HEEBO-…       0.189          0.0282          -0.0931           0.260 </span></a>
-<a class="sourceLine" id="cb13-13" data-line-number="13"><span class="co">#&gt; 4 HEEBO-…      -0.205          0.0170           0.123            0.135 </span></a>
-<a class="sourceLine" id="cb13-14" data-line-number="14"><span class="co">#&gt; 5 HEEBO-…       0.0752         0.386            0.114            0.169 </span></a>
-<a class="sourceLine" id="cb13-15" data-line-number="15"><span class="co">#&gt; 6 HEEBO-…      -0.204          0.0179           0.168            0.0410</span></a>
+<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="co">#&gt; 1 HEEBO-…       0.0971          0.263           0.0193           0.816 </span></a>
+<a class="sourceLine" id="cb13-11" data-line-number="11"><span class="co">#&gt; 2 HEEBO-…      -0.0312          0.720           0.162            0.0498</span></a>
+<a class="sourceLine" id="cb13-12" data-line-number="12"><span class="co">#&gt; 3 HEEBO-…       0.102           0.241           0.0773           0.350 </span></a>
+<a class="sourceLine" id="cb13-13" data-line-number="13"><span class="co">#&gt; 4 HEEBO-…       0.0867          0.318           0.0121           0.884 </span></a>
+<a class="sourceLine" id="cb13-14" data-line-number="14"><span class="co">#&gt; 5 HEEBO-…      -0.0878          0.311           0.0496           0.549 </span></a>
+<a class="sourceLine" id="cb13-15" data-line-number="15"><span class="co">#&gt; 6 HEEBO-…      -0.0720          0.407          -0.111            0.178 </span></a>
 <a class="sourceLine" id="cb13-16" data-line-number="16"><span class="co">#&gt; # … with 2 more variables: level_change.p.adj &lt;dbl&gt;,</span></a>
 <a class="sourceLine" id="cb13-17" data-line-number="17"><span class="co">#&gt; #   heterogeneity_change.p.adj &lt;dbl&gt;</span></a></code></pre></div>
 </div>
@@ -400,102 +412,101 @@
 <a class="sourceLine" id="cb14-14" data-line-number="14"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb14-15" data-line-number="15"><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────────────────────────────────────────────</span></a>
 <a class="sourceLine" id="cb14-16" data-line-number="16"><span class="co">#&gt;  package        * version   date       lib source        </span></a>
-<a class="sourceLine" id="cb14-17" data-line-number="17"><span class="co">#&gt;  annotate         1.62.0    2019-05-02 [3] Bioconductor  </span></a>
-<a class="sourceLine" id="cb14-18" data-line-number="18"><span class="co">#&gt;  AnnotationDbi    1.46.0    2019-05-02 [3] Bioconductor  </span></a>
-<a class="sourceLine" id="cb14-19" data-line-number="19"><span class="co">#&gt;  assertthat       0.2.1     2019-03-21 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-20" data-line-number="20"><span class="co">#&gt;  backports        1.1.5     2019-10-02 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-21" data-line-number="21"><span class="co">#&gt;  Biobase        * 2.44.0    2019-05-02 [3] Bioconductor  </span></a>
-<a class="sourceLine" id="cb14-22" data-line-number="22"><span class="co">#&gt;  BiocGenerics   * 0.30.0    2019-05-02 [3] Bioconductor  </span></a>
-<a class="sourceLine" id="cb14-23" data-line-number="23"><span class="co">#&gt;  BiocParallel     1.18.1    2019-08-06 [3] Bioconductor  </span></a>
-<a class="sourceLine" id="cb14-24" data-line-number="24"><span class="co">#&gt;  bit              1.1-14    2018-05-29 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-25" data-line-number="25"><span class="co">#&gt;  bit64            0.9-7     2017-05-08 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-26" data-line-number="26"><span class="co">#&gt;  bitops           1.0-6     2013-08-17 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-27" data-line-number="27"><span class="co">#&gt;  blob             1.2.0     2019-07-09 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-28" data-line-number="28"><span class="co">#&gt;  broom            0.5.2     2019-04-07 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-29" data-line-number="29"><span class="co">#&gt;  cellranger       1.1.0     2016-07-27 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-30" data-line-number="30"><span class="co">#&gt;  cli              1.1.0     2019-03-19 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-31" data-line-number="31"><span class="co">#&gt;  colorspace       1.4-1     2019-03-18 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-32" data-line-number="32"><span class="co">#&gt;  crayon           1.3.4     2017-09-16 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-33" data-line-number="33"><span class="co">#&gt;  curl             4.0       2019-07-22 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-34" data-line-number="34"><span class="co">#&gt;  DBI              1.0.0     2018-05-02 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-35" data-line-number="35"><span class="co">#&gt;  desc             1.2.0     2018-05-01 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-36" data-line-number="36"><span class="co">#&gt;  digest           0.6.21    2019-09-20 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-37" data-line-number="37"><span class="co">#&gt;  dplyr          * 0.8.3     2019-07-04 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-38" data-line-number="38"><span class="co">#&gt;  evaluate         0.14      2019-05-28 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-39" data-line-number="39"><span class="co">#&gt;  fansi            0.4.0     2018-10-05 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-40" data-line-number="40"><span class="co">#&gt;  forcats        * 0.4.0     2019-02-17 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-41" data-line-number="41"><span class="co">#&gt;  fs               1.3.1     2019-05-06 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-42" data-line-number="42"><span class="co">#&gt;  genefilter       1.66.0    2019-05-02 [3] Bioconductor  </span></a>
-<a class="sourceLine" id="cb14-43" data-line-number="43"><span class="co">#&gt;  generics         0.0.2     2018-11-29 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-44" data-line-number="44"><span class="co">#&gt;  GEOquery       * 2.52.0    2019-05-02 [3] Bioconductor  </span></a>
-<a class="sourceLine" id="cb14-45" data-line-number="45"><span class="co">#&gt;  ggplot2        * 3.2.1     2019-08-10 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-46" data-line-number="46"><span class="co">#&gt;  glue             1.3.1     2019-03-12 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-47" data-line-number="47"><span class="co">#&gt;  gtable           0.3.0     2019-03-25 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-48" data-line-number="48"><span class="co">#&gt;  haven            2.1.1     2019-07-04 [3] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-17" data-line-number="17"><span class="co">#&gt;  annotate         1.62.0    2019-05-02 [2] Bioconductor  </span></a>
+<a class="sourceLine" id="cb14-18" data-line-number="18"><span class="co">#&gt;  AnnotationDbi    1.46.0    2019-05-02 [2] Bioconductor  </span></a>
+<a class="sourceLine" id="cb14-19" data-line-number="19"><span class="co">#&gt;  assertthat       0.2.1     2019-03-21 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-20" data-line-number="20"><span class="co">#&gt;  backports        1.1.5     2019-10-02 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-21" data-line-number="21"><span class="co">#&gt;  Biobase        * 2.44.0    2019-05-02 [2] Bioconductor  </span></a>
+<a class="sourceLine" id="cb14-22" data-line-number="22"><span class="co">#&gt;  BiocGenerics   * 0.30.0    2019-05-02 [2] Bioconductor  </span></a>
+<a class="sourceLine" id="cb14-23" data-line-number="23"><span class="co">#&gt;  BiocParallel     1.18.1    2019-08-06 [2] Bioconductor  </span></a>
+<a class="sourceLine" id="cb14-24" data-line-number="24"><span class="co">#&gt;  bit              1.1-14    2018-05-29 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-25" data-line-number="25"><span class="co">#&gt;  bit64            0.9-7     2017-05-08 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-26" data-line-number="26"><span class="co">#&gt;  bitops           1.0-6     2013-08-17 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-27" data-line-number="27"><span class="co">#&gt;  blob             1.2.0     2019-07-09 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-28" data-line-number="28"><span class="co">#&gt;  broom            0.5.2     2019-04-07 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-29" data-line-number="29"><span class="co">#&gt;  cellranger       1.1.0     2016-07-27 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-30" data-line-number="30"><span class="co">#&gt;  cli              1.1.0     2019-03-19 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-31" data-line-number="31"><span class="co">#&gt;  colorspace       1.4-1     2019-03-18 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-32" data-line-number="32"><span class="co">#&gt;  crayon           1.3.4     2017-09-16 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-33" data-line-number="33"><span class="co">#&gt;  curl             4.0       2019-07-22 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-34" data-line-number="34"><span class="co">#&gt;  DBI              1.0.0     2018-05-02 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-35" data-line-number="35"><span class="co">#&gt;  desc             1.2.0     2018-05-01 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-36" data-line-number="36"><span class="co">#&gt;  digest           0.6.21    2019-09-20 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-37" data-line-number="37"><span class="co">#&gt;  dplyr          * 0.8.3     2019-07-04 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-38" data-line-number="38"><span class="co">#&gt;  evaluate         0.14      2019-05-28 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-39" data-line-number="39"><span class="co">#&gt;  fansi            0.4.0     2018-10-05 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-40" data-line-number="40"><span class="co">#&gt;  forcats        * 0.4.0     2019-02-17 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-41" data-line-number="41"><span class="co">#&gt;  fs               1.3.1     2019-05-06 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-42" data-line-number="42"><span class="co">#&gt;  genefilter       1.66.0    2019-05-02 [2] Bioconductor  </span></a>
+<a class="sourceLine" id="cb14-43" data-line-number="43"><span class="co">#&gt;  generics         0.0.2     2018-11-29 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-44" data-line-number="44"><span class="co">#&gt;  GEOquery       * 2.52.0    2019-05-02 [2] Bioconductor  </span></a>
+<a class="sourceLine" id="cb14-45" data-line-number="45"><span class="co">#&gt;  ggplot2        * 3.2.1     2019-08-10 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-46" data-line-number="46"><span class="co">#&gt;  glue             1.3.1     2019-03-12 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-47" data-line-number="47"><span class="co">#&gt;  gtable           0.3.0     2019-03-25 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-48" data-line-number="48"><span class="co">#&gt;  haven            2.1.1     2019-07-04 [2] CRAN (R 3.6.0)</span></a>
 <a class="sourceLine" id="cb14-49" data-line-number="49"><span class="co">#&gt;  hetAge         * 0.1.0     2019-12-23 [1] local         </span></a>
-<a class="sourceLine" id="cb14-50" data-line-number="50"><span class="co">#&gt;  highr            0.8       2019-03-20 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-51" data-line-number="51"><span class="co">#&gt;  hms              0.5.0     2019-07-09 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-52" data-line-number="52"><span class="co">#&gt;  htmltools        0.3.6     2017-04-28 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-53" data-line-number="53"><span class="co">#&gt;  httr             1.4.1     2019-08-05 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-54" data-line-number="54"><span class="co">#&gt;  IRanges          2.18.1    2019-05-31 [3] Bioconductor  </span></a>
-<a class="sourceLine" id="cb14-55" data-line-number="55"><span class="co">#&gt;  jsonlite         1.6       2018-12-07 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-56" data-line-number="56"><span class="co">#&gt;  knitr            1.24      2019-08-08 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-57" data-line-number="57"><span class="co">#&gt;  labeling         0.3       2014-08-23 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-58" data-line-number="58"><span class="co">#&gt;  lattice          0.20-38   2018-11-04 [3] CRAN (R 3.6.1)</span></a>
-<a class="sourceLine" id="cb14-59" data-line-number="59"><span class="co">#&gt;  lazyeval         0.2.2     2019-03-15 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-60" data-line-number="60"><span class="co">#&gt;  limma            3.40.6    2019-07-26 [3] Bioconductor  </span></a>
-<a class="sourceLine" id="cb14-61" data-line-number="61"><span class="co">#&gt;  lubridate        1.7.4     2018-04-11 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-62" data-line-number="62"><span class="co">#&gt;  magrittr         1.5       2014-11-22 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-63" data-line-number="63"><span class="co">#&gt;  MASS             7.3-51.4  2019-03-31 [3] CRAN (R 3.6.1)</span></a>
-<a class="sourceLine" id="cb14-64" data-line-number="64"><span class="co">#&gt;  Matrix           1.2-17    2019-03-22 [3] CRAN (R 3.6.1)</span></a>
-<a class="sourceLine" id="cb14-65" data-line-number="65"><span class="co">#&gt;  matrixStats      0.54.0    2018-07-23 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-66" data-line-number="66"><span class="co">#&gt;  memoise          1.1.0     2017-04-21 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-67" data-line-number="67"><span class="co">#&gt;  mgcv             1.8-28    2019-03-21 [3] CRAN (R 3.6.1)</span></a>
-<a class="sourceLine" id="cb14-68" data-line-number="68"><span class="co">#&gt;  modelr           0.1.5     2019-08-08 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-69" data-line-number="69"><span class="co">#&gt;  munsell          0.5.0     2018-06-12 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-70" data-line-number="70"><span class="co">#&gt;  nlme             3.1-140   2019-05-12 [3] CRAN (R 3.6.1)</span></a>
-<a class="sourceLine" id="cb14-71" data-line-number="71"><span class="co">#&gt;  pillar           1.4.2     2019-06-29 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-72" data-line-number="72"><span class="co">#&gt;  pkgconfig        2.0.3     2019-09-22 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-73" data-line-number="73"><span class="co">#&gt;  pkgdown          1.4.1     2019-09-15 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-74" data-line-number="74"><span class="co">#&gt;  plyr             1.8.4     2016-06-08 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-75" data-line-number="75"><span class="co">#&gt;  preprocessCore   1.46.0    2019-05-02 [3] Bioconductor  </span></a>
-<a class="sourceLine" id="cb14-76" data-line-number="76"><span class="co">#&gt;  purrr          * 0.3.2     2019-03-15 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-77" data-line-number="77"><span class="co">#&gt;  R6               2.4.0     2019-02-14 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-78" data-line-number="78"><span class="co">#&gt;  Rcpp             1.0.2     2019-07-25 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-79" data-line-number="79"><span class="co">#&gt;  RCurl            1.95-4.12 2019-03-04 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-80" data-line-number="80"><span class="co">#&gt;  readr          * 1.3.1     2018-12-21 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-81" data-line-number="81"><span class="co">#&gt;  readxl           1.3.1     2019-03-13 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-82" data-line-number="82"><span class="co">#&gt;  reshape2         1.4.3     2017-12-11 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-83" data-line-number="83"><span class="co">#&gt;  rlang            0.4.0     2019-06-25 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-84" data-line-number="84"><span class="co">#&gt;  rmarkdown        1.14      2019-07-12 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-85" data-line-number="85"><span class="co">#&gt;  rprojroot        1.3-2     2018-01-03 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-86" data-line-number="86"><span class="co">#&gt;  RSQLite          2.1.2     2019-07-24 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-87" data-line-number="87"><span class="co">#&gt;  rstudioapi       0.10      2019-03-19 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-88" data-line-number="88"><span class="co">#&gt;  rvest            0.3.4     2019-05-15 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-89" data-line-number="89"><span class="co">#&gt;  S4Vectors        0.22.0    2019-05-02 [3] Bioconductor  </span></a>
-<a class="sourceLine" id="cb14-90" data-line-number="90"><span class="co">#&gt;  scales           1.0.0     2018-08-09 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-91" data-line-number="91"><span class="co">#&gt;  sessioninfo      1.1.1     2018-11-05 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-92" data-line-number="92"><span class="co">#&gt;  stringi          1.4.3     2019-03-12 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-93" data-line-number="93"><span class="co">#&gt;  stringr        * 1.4.0     2019-02-10 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-94" data-line-number="94"><span class="co">#&gt;  survival         2.44-1.1  2019-04-01 [3] CRAN (R 3.6.1)</span></a>
-<a class="sourceLine" id="cb14-95" data-line-number="95"><span class="co">#&gt;  sva              3.32.1    2019-05-22 [3] Bioconductor  </span></a>
-<a class="sourceLine" id="cb14-96" data-line-number="96"><span class="co">#&gt;  tibble         * 2.1.3     2019-06-06 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-97" data-line-number="97"><span class="co">#&gt;  tidyr          * 0.8.3     2019-03-01 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-98" data-line-number="98"><span class="co">#&gt;  tidyselect       0.2.5     2018-10-11 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-99" data-line-number="99"><span class="co">#&gt;  tidyverse      * 1.2.1     2017-11-14 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-100" data-line-number="100"><span class="co">#&gt;  utf8             1.1.4     2018-05-24 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-101" data-line-number="101"><span class="co">#&gt;  vctrs            0.2.0     2019-07-05 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-102" data-line-number="102"><span class="co">#&gt;  withr            2.1.2     2018-03-15 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-103" data-line-number="103"><span class="co">#&gt;  xfun             0.8       2019-06-25 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-104" data-line-number="104"><span class="co">#&gt;  XML              3.98-1.20 2019-06-06 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-105" data-line-number="105"><span class="co">#&gt;  xml2             1.2.2     2019-08-09 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-106" data-line-number="106"><span class="co">#&gt;  xtable           1.8-4     2019-04-21 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-107" data-line-number="107"><span class="co">#&gt;  yaml             2.2.0     2018-07-25 [3] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-108" data-line-number="108"><span class="co">#&gt;  zeallot          0.1.0     2018-01-28 [3] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-50" data-line-number="50"><span class="co">#&gt;  highr            0.8       2019-03-20 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-51" data-line-number="51"><span class="co">#&gt;  hms              0.5.0     2019-07-09 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-52" data-line-number="52"><span class="co">#&gt;  htmltools        0.3.6     2017-04-28 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-53" data-line-number="53"><span class="co">#&gt;  httr             1.4.1     2019-08-05 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-54" data-line-number="54"><span class="co">#&gt;  IRanges          2.18.1    2019-05-31 [2] Bioconductor  </span></a>
+<a class="sourceLine" id="cb14-55" data-line-number="55"><span class="co">#&gt;  jsonlite         1.6       2018-12-07 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-56" data-line-number="56"><span class="co">#&gt;  knitr            1.24      2019-08-08 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-57" data-line-number="57"><span class="co">#&gt;  labeling         0.3       2014-08-23 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-58" data-line-number="58"><span class="co">#&gt;  lattice          0.20-38   2018-11-04 [2] CRAN (R 3.6.1)</span></a>
+<a class="sourceLine" id="cb14-59" data-line-number="59"><span class="co">#&gt;  lazyeval         0.2.2     2019-03-15 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-60" data-line-number="60"><span class="co">#&gt;  limma            3.40.6    2019-07-26 [2] Bioconductor  </span></a>
+<a class="sourceLine" id="cb14-61" data-line-number="61"><span class="co">#&gt;  lubridate        1.7.4     2018-04-11 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-62" data-line-number="62"><span class="co">#&gt;  magrittr         1.5       2014-11-22 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-63" data-line-number="63"><span class="co">#&gt;  MASS             7.3-51.4  2019-03-31 [2] CRAN (R 3.6.1)</span></a>
+<a class="sourceLine" id="cb14-64" data-line-number="64"><span class="co">#&gt;  Matrix           1.2-17    2019-03-22 [2] CRAN (R 3.6.1)</span></a>
+<a class="sourceLine" id="cb14-65" data-line-number="65"><span class="co">#&gt;  matrixStats      0.54.0    2018-07-23 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-66" data-line-number="66"><span class="co">#&gt;  memoise          1.1.0     2017-04-21 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-67" data-line-number="67"><span class="co">#&gt;  mgcv             1.8-28    2019-03-21 [2] CRAN (R 3.6.1)</span></a>
+<a class="sourceLine" id="cb14-68" data-line-number="68"><span class="co">#&gt;  modelr           0.1.5     2019-08-08 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-69" data-line-number="69"><span class="co">#&gt;  munsell          0.5.0     2018-06-12 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-70" data-line-number="70"><span class="co">#&gt;  nlme             3.1-140   2019-05-12 [2] CRAN (R 3.6.1)</span></a>
+<a class="sourceLine" id="cb14-71" data-line-number="71"><span class="co">#&gt;  pillar           1.4.2     2019-06-29 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-72" data-line-number="72"><span class="co">#&gt;  pkgconfig        2.0.3     2019-09-22 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-73" data-line-number="73"><span class="co">#&gt;  pkgdown          1.4.1     2019-09-15 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-74" data-line-number="74"><span class="co">#&gt;  plyr             1.8.4     2016-06-08 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-75" data-line-number="75"><span class="co">#&gt;  preprocessCore   1.46.0    2019-05-02 [2] Bioconductor  </span></a>
+<a class="sourceLine" id="cb14-76" data-line-number="76"><span class="co">#&gt;  purrr          * 0.3.2     2019-03-15 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-77" data-line-number="77"><span class="co">#&gt;  R6               2.4.0     2019-02-14 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-78" data-line-number="78"><span class="co">#&gt;  Rcpp             1.0.2     2019-07-25 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-79" data-line-number="79"><span class="co">#&gt;  RCurl            1.95-4.12 2019-03-04 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-80" data-line-number="80"><span class="co">#&gt;  readr          * 1.3.1     2018-12-21 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-81" data-line-number="81"><span class="co">#&gt;  readxl           1.3.1     2019-03-13 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-82" data-line-number="82"><span class="co">#&gt;  reshape2         1.4.3     2017-12-11 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-83" data-line-number="83"><span class="co">#&gt;  rlang            0.4.0     2019-06-25 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-84" data-line-number="84"><span class="co">#&gt;  rmarkdown        1.14      2019-07-12 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-85" data-line-number="85"><span class="co">#&gt;  rprojroot        1.3-2     2018-01-03 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-86" data-line-number="86"><span class="co">#&gt;  RSQLite          2.1.2     2019-07-24 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-87" data-line-number="87"><span class="co">#&gt;  rstudioapi       0.10      2019-03-19 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-88" data-line-number="88"><span class="co">#&gt;  rvest            0.3.4     2019-05-15 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-89" data-line-number="89"><span class="co">#&gt;  S4Vectors        0.22.0    2019-05-02 [2] Bioconductor  </span></a>
+<a class="sourceLine" id="cb14-90" data-line-number="90"><span class="co">#&gt;  scales           1.0.0     2018-08-09 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-91" data-line-number="91"><span class="co">#&gt;  sessioninfo      1.1.1     2018-11-05 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-92" data-line-number="92"><span class="co">#&gt;  stringi          1.4.3     2019-03-12 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-93" data-line-number="93"><span class="co">#&gt;  stringr        * 1.4.0     2019-02-10 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-94" data-line-number="94"><span class="co">#&gt;  survival         2.44-1.1  2019-04-01 [2] CRAN (R 3.6.1)</span></a>
+<a class="sourceLine" id="cb14-95" data-line-number="95"><span class="co">#&gt;  sva              3.32.1    2019-05-22 [2] Bioconductor  </span></a>
+<a class="sourceLine" id="cb14-96" data-line-number="96"><span class="co">#&gt;  tibble         * 2.1.3     2019-06-06 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-97" data-line-number="97"><span class="co">#&gt;  tidyr          * 0.8.3     2019-03-01 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-98" data-line-number="98"><span class="co">#&gt;  tidyselect       0.2.5     2018-10-11 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-99" data-line-number="99"><span class="co">#&gt;  tidyverse      * 1.2.1     2017-11-14 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-100" data-line-number="100"><span class="co">#&gt;  utf8             1.1.4     2018-05-24 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-101" data-line-number="101"><span class="co">#&gt;  vctrs            0.2.0     2019-07-05 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-102" data-line-number="102"><span class="co">#&gt;  withr            2.1.2     2018-03-15 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-103" data-line-number="103"><span class="co">#&gt;  xfun             0.8       2019-06-25 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-104" data-line-number="104"><span class="co">#&gt;  XML              3.98-1.20 2019-06-06 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-105" data-line-number="105"><span class="co">#&gt;  xml2             1.2.2     2019-08-09 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-106" data-line-number="106"><span class="co">#&gt;  xtable           1.8-4     2019-04-21 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-107" data-line-number="107"><span class="co">#&gt;  yaml             2.2.0     2018-07-25 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb14-108" data-line-number="108"><span class="co">#&gt;  zeallot          0.1.0     2018-01-28 [2] CRAN (R 3.6.0)</span></a>
 <a class="sourceLine" id="cb14-109" data-line-number="109"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb14-110" data-line-number="110"><span class="co">#&gt; [1] /private/var/folders/z1/nv26gvmx4_11_968lfd0n5rh0000gn/T/Rtmp8L9ieh/temp_libpath3bc42839f205</span></a>
-<a class="sourceLine" id="cb14-111" data-line-number="111"><span class="co">#&gt; [2] /private/var/folders/z1/nv26gvmx4_11_968lfd0n5rh0000gn/T/Rtmp8L9ieh/temp_libpath3bc451e2aa4c</span></a>
-<a class="sourceLine" id="cb14-112" data-line-number="112"><span class="co">#&gt; [3] /Library/Frameworks/R.framework/Versions/3.6/Resources/library</span></a></code></pre></div>
+<a class="sourceLine" id="cb14-110" data-line-number="110"><span class="co">#&gt; [1] /private/var/folders/z1/nv26gvmx4_11_968lfd0n5rh0000gn/T/RtmpKP3OHs/temp_libpathd93c4488a6f</span></a>
+<a class="sourceLine" id="cb14-111" data-line-number="111"><span class="co">#&gt; [2] /Library/Frameworks/R.framework/Versions/3.6/Resources/library</span></a></code></pre></div>
 </div>
   </div>
 
