@@ -68,7 +68,7 @@ resx <- calc.het(exprmat = expmat[sample(rownames(expmat),1000),], # expression 
 
 The resulting object is a list with several fields. 
 
-### The list of sampels used in the analysis:
+### The list of samples used in the analysis:
 ```{r}
 head(resx$sampleID)
 ```
