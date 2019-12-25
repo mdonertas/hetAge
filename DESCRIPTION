@@ -11,7 +11,7 @@ Authors@R: c(person("Melike", "Donertas", role=c("aut", "cre"), email="melike@eb
       comment = c(ORCID = "0000-0003-0824-4096")))
 Maintainer: Melike Donertas <melike@ebi.ac.uk>
 Description: A collection of functions to analyse the age-related changes in gene expression level and heterogeneity.
-License: GPL-3
+License: GPL-3.0-or-later
 URL: https://mdonertas.github.io/hetAge
 BugReports: https://github.com/mdonertas/hetAge/issues
 Encoding: UTF-8
