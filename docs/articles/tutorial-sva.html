@@ -78,7 +78,7 @@
       <h1>Package Tutorial - Using SVA Correction</h1>
                         <h4 class="author">Melike Donertas</h4>
             
-            <h4 class="date">2019-12-23</h4>
+            <h4 class="date">2019-12-31</h4>
       
       
       <div class="hidden name"><code>tutorial-sva.Rmd</code></div>
@@ -170,7 +170,7 @@
 <a class="sourceLine" id="cb2-10" data-line-number="10">  <span class="dt">covariates =</span> covs, <span class="co"># covariates</span></a>
 <a class="sourceLine" id="cb2-11" data-line-number="11">  <span class="dt">het_change_met =</span> <span class="st">'spearman'</span>, <span class="co"># method to measure change in heterogeneity</span></a>
 <a class="sourceLine" id="cb2-12" data-line-number="12">  <span class="dt">padj_met =</span> <span class="st">'fdr'</span>) <span class="co"># multiple test correction method</span></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt; Number of significant surrogate variables is:  13 </span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt; Number of significant surrogate variables is:  15 </span></a>
 <a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt; Iteration (out of 5 ):1  2  3  4  5</span></a></code></pre></div>
 </div>
 <div id="result-object" class="section level1">
@@ -187,18 +187,18 @@
 <h2 class="hasAnchor">
 <a href="#the-expression-matrix-inputted-in-the-first-place-only-including-the-samples-used-in-the-analysis-" class="anchor"></a>The expression matrix inputted in the first place, only including the samples used in the analysis.</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">resx<span class="op">$</span>input_expr[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt;                       GSM750020   GSM750021  GSM750022    GSM750023</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; HEEBO-061-HCC61N21  -0.15982372 -0.02276168  0.1272045  0.023611719</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; HEEBO-102-HCA102D22 -0.18100484 -0.28777702 -0.2552695 -0.173751581</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; HEEBO-047-HCC47B24  -0.47989847 -0.85685444 -0.3216806 -0.882169534</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; HEEBO-106-HCA106L3   0.08019429 -0.07902049  0.2043889 -0.471822227</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; HEEBO-028-HCC28L24  -0.46115002 -0.45147979 -0.4818411  0.000636905</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt;                       GSM750024</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; HEEBO-061-HCC61N21  -0.51630640</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; HEEBO-102-HCA102D22 -0.15987009</span></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; HEEBO-047-HCC47B24  -0.06825152</span></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; HEEBO-106-HCA106L3   0.07156304</span></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; HEEBO-028-HCC28L24  -0.43393269</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt;                      GSM750020   GSM750021   GSM750022 GSM750023</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; HEEBO-052-HCC52F4   0.10049472 -0.05629888  0.48009140 0.7026872</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; HEEBO-055-HCC55M14 -0.04526109 -0.13370321  0.18454854 0.1686122</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; HEEBO-062-HCC62C12  0.18587892 -0.22945709  0.75308331 0.2992347</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; HEEBO-058-HCC58H16  0.35549359 -0.18573769 -0.03304151 0.2351208</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; HEEBO-018-HCC18G15  0.27837650  1.04788814  0.49108739 1.0070288</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt;                      GSM750024</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; HEEBO-052-HCC52F4  -2.49810601</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; HEEBO-055-HCC55M14 -0.68181162</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; HEEBO-062-HCC62C12  0.61039147</span></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; HEEBO-058-HCC58H16  0.09478959</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; HEEBO-018-HCC18G15  0.49569428</span></a></code></pre></div>
 </div>
 <div id="the-ages-in-the-original-format-including-only-the-samples-used-in-the-analysis" class="section level2">
 <h2 class="hasAnchor">
@@ -215,12 +215,12 @@
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; GSM750020 GSM750021 GSM750022 GSM750023 GSM750024 GSM750025 </span></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="co">#&gt;  9.268913  9.332920  9.341518  9.350705  9.358950  9.409170</span></a></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(tidyverse)</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt; ── Attaching packages ─────────────────────────────── tidyverse 1.2.1 ──</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt; ── Attaching packages ───────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</span></a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#&gt; ✔ ggplot2 3.2.1     ✔ purrr   0.3.2</span></a>
 <a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#&gt; ✔ tibble  2.1.3     ✔ dplyr   0.8.3</span></a>
 <a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt; ✔ tidyr   0.8.3     ✔ stringr 1.4.0</span></a>
 <a class="sourceLine" id="cb7-6" data-line-number="6"><span class="co">#&gt; ✔ readr   1.3.1     ✔ forcats 0.4.0</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">#&gt; ── Conflicts ────────────────────────────────── tidyverse_conflicts() ──</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">#&gt; ── Conflicts ──────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──</span></a>
 <a class="sourceLine" id="cb7-8" data-line-number="8"><span class="co">#&gt; ✖ dplyr::combine()    masks Biobase::combine(), BiocGenerics::combine()</span></a>
 <a class="sourceLine" id="cb7-9" data-line-number="9"><span class="co">#&gt; ✖ dplyr::filter()     masks stats::filter()</span></a>
 <a class="sourceLine" id="cb7-10" data-line-number="10"><span class="co">#&gt; ✖ dplyr::lag()        masks stats::lag()</span></a>
@@ -237,44 +237,44 @@
 <a href="#expression-matrix-after-correcting-for-confounding-factors" class="anchor"></a>Expression matrix after correcting for confounding factors</h2>
 <p>These are the expression values for the probesets after accounting for the predicting confounding factors, i.e. SVs</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">resx<span class="op">$</span>sva_res<span class="op">$</span>correctedExp[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt;                        GSM750020   GSM750021   GSM750022   GSM750023</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; HEEBO-061-HCC61N21  -0.293686847 -0.03443580  0.06500429  0.02550782</span></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt; HEEBO-102-HCA102D22  0.024167087 -0.03964470 -0.10026825 -0.06085823</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt; HEEBO-047-HCC47B24  -0.026048980  0.01278524  0.06674873 -0.07920790</span></a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#&gt; HEEBO-106-HCA106L3  -0.002857664 -0.08452609  0.20304439 -0.71877986</span></a>
-<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#&gt; HEEBO-028-HCC28L24  -0.018982225  0.02860374 -0.01712515  0.14816464</span></a>
-<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="co">#&gt;                       GSM750024</span></a>
-<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co">#&gt; HEEBO-061-HCC61N21  -0.21266046</span></a>
-<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co">#&gt; HEEBO-102-HCA102D22 -0.12521379</span></a>
-<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="co">#&gt; HEEBO-047-HCC47B24   0.48018876</span></a>
-<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co">#&gt; HEEBO-106-HCA106L3   0.14308091</span></a>
-<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="co">#&gt; HEEBO-028-HCC28L24   0.08136614</span></a></code></pre></div>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">#&gt;                      GSM750020   GSM750021   GSM750022    GSM750023</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; HEEBO-052-HCC52F4  -0.06578511  0.21534929  0.14186783  0.177822545</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt; HEEBO-055-HCC55M14 -0.34298413 -0.09787721 -0.15968076  0.162312423</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#&gt; HEEBO-062-HCC62C12  0.09462668 -0.42847839  0.15059911 -0.009947639</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#&gt; HEEBO-058-HCC58H16  0.13975540  0.07335882 -0.10368628  0.188370170</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#&gt; HEEBO-018-HCC18G15 -0.11578613  0.32491123 -0.06006239  0.182779324</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="co">#&gt;                      GSM750024</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co">#&gt; HEEBO-052-HCC52F4   0.12272472</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co">#&gt; HEEBO-055-HCC55M14 -0.31357715</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="co">#&gt; HEEBO-062-HCC62C12  0.31779393</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co">#&gt; HEEBO-058-HCC58H16 -0.08316992</span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="co">#&gt; HEEBO-018-HCC18G15 -0.04886080</span></a></code></pre></div>
 </div>
 <div id="svs-predicted-by-sva" class="section level2">
 <h2 class="hasAnchor">
 <a href="#svs-predicted-by-sva" class="anchor"></a>SVs predicted by SVA</h2>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(resx<span class="op">$</span>sva_res<span class="op">$</span>SVs)</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt;                    SV_1         SV_2         SV_3          SV_4</span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co">#&gt; GSM750020  0.0346994348  0.037234239 -0.002764006  0.0832841213</span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt; GSM750021  0.0007390082  0.007756226 -0.162194873 -0.0942619459</span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt; GSM750022  0.0455655501  0.100167614  0.009514200 -0.0008989108</span></a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; GSM750023  0.0325279670 -0.076885204 -0.009599594  0.0575396508</span></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; GSM750024 -0.0899385792  0.012947531  0.015705342  0.0182699830</span></a>
-<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt; GSM750025  0.0419396656  0.001964527 -0.063628792  0.0570792789</span></a>
-<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt;                  SV_5        SV_6         SV_7        SV_8         SV_9</span></a>
-<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co">#&gt; GSM750020 -0.10355219  0.16021768 -0.026520677  0.04613517  0.011394501</span></a>
-<a class="sourceLine" id="cb9-11" data-line-number="11"><span class="co">#&gt; GSM750021  0.16886561  0.02775811 -0.008468507 -0.02687718 -0.006485861</span></a>
-<a class="sourceLine" id="cb9-12" data-line-number="12"><span class="co">#&gt; GSM750022 -0.03615539  0.06663396 -0.007223054  0.03324283 -0.115411146</span></a>
-<a class="sourceLine" id="cb9-13" data-line-number="13"><span class="co">#&gt; GSM750023  0.08406153 -0.04485029 -0.082966297  0.05408930  0.026193023</span></a>
-<a class="sourceLine" id="cb9-14" data-line-number="14"><span class="co">#&gt; GSM750024  0.15082386 -0.17095231 -0.026037002 -0.04931282 -0.042073897</span></a>
-<a class="sourceLine" id="cb9-15" data-line-number="15"><span class="co">#&gt; GSM750025  0.01684135  0.06973946  0.047609845 -0.05544381  0.130400397</span></a>
-<a class="sourceLine" id="cb9-16" data-line-number="16"><span class="co">#&gt;                  SV_10        SV_11        SV_12        SV_13</span></a>
-<a class="sourceLine" id="cb9-17" data-line-number="17"><span class="co">#&gt; GSM750020 -0.019410589  0.038036938 -0.013766783  0.058036733</span></a>
-<a class="sourceLine" id="cb9-18" data-line-number="18"><span class="co">#&gt; GSM750021 -0.042500309 -0.006512615 -0.008539760 -0.034500796</span></a>
-<a class="sourceLine" id="cb9-19" data-line-number="19"><span class="co">#&gt; GSM750022  0.002178357 -0.083902979 -0.024619311 -0.042476277</span></a>
-<a class="sourceLine" id="cb9-20" data-line-number="20"><span class="co">#&gt; GSM750023  0.158469091  0.041867156 -0.045151604  0.018938678</span></a>
-<a class="sourceLine" id="cb9-21" data-line-number="21"><span class="co">#&gt; GSM750024 -0.134846240 -0.070903135  0.105112716  0.002584345</span></a>
-<a class="sourceLine" id="cb9-22" data-line-number="22"><span class="co">#&gt; GSM750025  0.030464130 -0.046683285  0.001020397  0.064920986</span></a></code></pre></div>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt;                  SV_1         SV_2          SV_3         SV_4        SV_5</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co">#&gt; GSM750020 -0.03587305 -0.024489636  0.0059878164 -0.048965239  0.18616121</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt; GSM750021  0.02026107  0.107982425 -0.0700008411 -0.036937548 -0.06223375</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt; GSM750022 -0.03354348  0.099567309  0.1385842685  0.054784696  0.02114598</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt; GSM750023 -0.03361290 -0.068216831 -0.0657148298 -0.004427889 -0.05263926</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt; GSM750024  0.10156756 -0.009597882  0.0006723872 -0.080898990 -0.19914128</span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt; GSM750025 -0.03548707  0.010292602 -0.0397513723 -0.017186732  0.11495601</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt;                  SV_6        SV_7         SV_8         SV_9         SV_10</span></a>
+<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co">#&gt; GSM750020 -0.02325587 0.002625619 -0.010878374  0.082096963 -0.0007672591</span></a>
+<a class="sourceLine" id="cb9-11" data-line-number="11"><span class="co">#&gt; GSM750021  0.05018446 0.077027469 -0.042900822 -0.011518120 -0.0904105784</span></a>
+<a class="sourceLine" id="cb9-12" data-line-number="12"><span class="co">#&gt; GSM750022  0.01499163 0.015735664  0.034467558  0.003291519 -0.0471430470</span></a>
+<a class="sourceLine" id="cb9-13" data-line-number="13"><span class="co">#&gt; GSM750023  0.02363668 0.097666904 -0.047520740 -0.062625526  0.0811304600</span></a>
+<a class="sourceLine" id="cb9-14" data-line-number="14"><span class="co">#&gt; GSM750024  0.04171068 0.013182832  0.009590188 -0.004079491  0.0568044997</span></a>
+<a class="sourceLine" id="cb9-15" data-line-number="15"><span class="co">#&gt; GSM750025 -0.01146978 0.032153027 -0.016301063 -0.030611552  0.0060429281</span></a>
+<a class="sourceLine" id="cb9-16" data-line-number="16"><span class="co">#&gt;                 SV_11         SV_12        SV_13        SV_14        SV_15</span></a>
+<a class="sourceLine" id="cb9-17" data-line-number="17"><span class="co">#&gt; GSM750020  0.02490492 -0.0069757346  0.041085093 -0.002524479  0.110370167</span></a>
+<a class="sourceLine" id="cb9-18" data-line-number="18"><span class="co">#&gt; GSM750021 -0.11006230 -0.0175079243  0.042235402 -0.031401602 -0.002061871</span></a>
+<a class="sourceLine" id="cb9-19" data-line-number="19"><span class="co">#&gt; GSM750022  0.08235624  0.0303450060 -0.004128296  0.029456621  0.044021529</span></a>
+<a class="sourceLine" id="cb9-20" data-line-number="20"><span class="co">#&gt; GSM750023 -0.01577012 -0.0003788446  0.201223522  0.030454966 -0.013064804</span></a>
+<a class="sourceLine" id="cb9-21" data-line-number="21"><span class="co">#&gt; GSM750024 -0.06878366 -0.0157805016 -0.200155145 -0.164437212  0.177333153</span></a>
+<a class="sourceLine" id="cb9-22" data-line-number="22"><span class="co">#&gt; GSM750025 -0.12081924  0.0105574386 -0.006450429  0.121553328 -0.023115053</span></a></code></pre></div>
 </div>
 <div id="correlation-between-known-potential-confounders-and-predicted-svs" class="section level2">
 <h2 class="hasAnchor">
@@ -292,44 +292,44 @@
 <tbody>
 <tr class="odd">
 <td align="left">array.1</td>
-<td align="right">-0.0096322</td>
-<td align="right">0.7845833</td>
-<td align="right">0.9728497</td>
+<td align="right">0.0196222</td>
+<td align="right">0.5814825</td>
+<td align="right">0.9353713</td>
 <td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">array.10</td>
-<td align="right">-0.0171201</td>
-<td align="right">0.6272674</td>
-<td align="right">0.9728497</td>
+<td align="right">0.0225531</td>
+<td align="right">0.5265514</td>
+<td align="right">0.9353713</td>
 <td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">array.11</td>
-<td align="right">-0.0764046</td>
-<td align="right">0.0355621</td>
-<td align="right">0.2607888</td>
+<td align="right">0.0834974</td>
+<td align="right">0.0231217</td>
+<td align="right">0.1695593</td>
 <td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">array.12</td>
-<td align="right">-0.0365534</td>
-<td align="right">0.3814957</td>
-<td align="right">0.9728497</td>
+<td align="right">0.0332366</td>
+<td align="right">0.4305371</td>
+<td align="right">0.9353713</td>
 <td align="right">1</td>
 </tr>
 <tr class="odd">
 <td align="left">array.13</td>
-<td align="right">-0.1608433</td>
-<td align="right">0.0000155</td>
-<td align="right">0.0001701</td>
+<td align="right">0.1496421</td>
+<td align="right">0.0000623</td>
+<td align="right">0.0013710</td>
 <td align="right">1</td>
 </tr>
 <tr class="even">
 <td align="left">array.14</td>
-<td align="right">-0.0751504</td>
-<td align="right">0.1204429</td>
-<td align="right">0.6624359</td>
+<td align="right">0.0576888</td>
+<td align="right">0.2368201</td>
+<td align="right">0.8872256</td>
 <td align="right">1</td>
 </tr>
 </tbody>
@@ -340,36 +340,24 @@
 <a href="#the-expression-level-matrix-used-for-modeling" class="anchor"></a>The expression level matrix used for modeling</h2>
 <p>This is the matrix used to model age-related expression change - the reason it is different from corrected matrix is because we may further scale the expression level for the features (‘sc_features’ parameter.)</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">resx<span class="op">$</span>usedMat[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co">#&gt;                       GSM750020   GSM750021  GSM750022  GSM750023</span></a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt; HEEBO-061-HCC61N21  -1.80644044 -0.24270914  0.4934951  0.1778693</span></a>
-<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt; HEEBO-102-HCA102D22  0.17093009 -0.28870845 -1.0469983 -0.3728139</span></a>
-<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt; HEEBO-047-HCC47B24  -0.17096598  0.06361206  0.4396010 -0.3427587</span></a>
-<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt; HEEBO-106-HCA106L3  -0.04112608 -0.43254422  1.2860577 -3.5925692</span></a>
-<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">#&gt; HEEBO-028-HCC28L24  -0.15659489  0.13255147 -0.1539256  0.7504844</span></a>
-<a class="sourceLine" id="cb11-8" data-line-number="8"><span class="co">#&gt;                      GSM750024</span></a>
-<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="co">#&gt; HEEBO-061-HCC61N21  -1.0882908</span></a>
-<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="co">#&gt; HEEBO-102-HCA102D22 -0.7066414</span></a>
-<a class="sourceLine" id="cb11-11" data-line-number="11"><span class="co">#&gt; HEEBO-047-HCC47B24   2.0832301</span></a>
-<a class="sourceLine" id="cb11-12" data-line-number="12"><span class="co">#&gt; HEEBO-106-HCA106L3   0.6785089</span></a>
-<a class="sourceLine" id="cb11-13" data-line-number="13"><span class="co">#&gt; HEEBO-028-HCC28L24   0.4092919</span></a></code></pre></div>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="co">#&gt;                     GSM750020  GSM750021  GSM750022  GSM750023  GSM750024</span></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">#&gt; HEEBO-052-HCC52F4  -0.4322146  1.1458254  0.8943767 0.93934762  0.6416444</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="co">#&gt; HEEBO-055-HCC55M14 -1.9471385 -0.4307714 -1.1183638 0.88710546 -1.4763938</span></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">#&gt; HEEBO-062-HCC62C12  0.3279681 -1.5542646  0.7426880 0.01220373  1.2090983</span></a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="co">#&gt; HEEBO-058-HCC58H16  0.7429342  0.4505388 -0.8675669 1.22556507 -0.5059969</span></a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="co">#&gt; HEEBO-018-HCC18G15 -0.4841314  1.2417387 -0.2949549 0.71294329 -0.1818230</span></a></code></pre></div>
 </div>
 <div id="residuals-from-the-model-between-expression-level-and-age" class="section level2">
 <h2 class="hasAnchor">
 <a href="#residuals-from-the-model-between-expression-level-and-age" class="anchor"></a>Residuals from the model between expression level and age</h2>
 <p>Absolute values of this matrix can be considered as the level of heterogeneity for each gene, each sample.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">resx<span class="op">$</span>residMat[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co">#&gt;                       GSM750020   GSM750021  GSM750022  GSM750023</span></a>
-<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co">#&gt; HEEBO-061-HCC61N21  -1.62032369 -0.06280664  0.6725628  0.3560450</span></a>
-<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="co">#&gt; HEEBO-102-HCA102D22  0.11120440 -0.34643996 -1.1044619 -0.4299913</span></a>
-<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="co">#&gt; HEEBO-047-HCC47B24   0.02382118  0.25189547  0.6270107 -0.1562825</span></a>
-<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="co">#&gt; HEEBO-106-HCA106L3   0.12499559 -0.27196918  1.4458876 -3.4335354</span></a>
-<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co">#&gt; HEEBO-028-HCC28L24  -0.32490066 -0.03013475 -0.3158568  0.5893597</span></a>
-<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="co">#&gt;                      GSM750024</span></a>
-<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="co">#&gt; HEEBO-061-HCC61N21  -0.9109156</span></a>
-<a class="sourceLine" id="cb12-10" data-line-number="10"><span class="co">#&gt; HEEBO-102-HCA102D22 -0.7635619</span></a>
-<a class="sourceLine" id="cb12-11" data-line-number="11"><span class="co">#&gt; HEEBO-047-HCC47B24   2.2688685</span></a>
-<a class="sourceLine" id="cb12-12" data-line-number="12"><span class="co">#&gt; HEEBO-106-HCA106L3   0.8368282</span></a>
-<a class="sourceLine" id="cb12-13" data-line-number="13"><span class="co">#&gt; HEEBO-028-HCC28L24   0.2488911</span></a></code></pre></div>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co">#&gt;                     GSM750020   GSM750021  GSM750022 GSM750023  GSM750024</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co">#&gt; HEEBO-052-HCC52F4  -0.3897952  1.18682843  0.9351895 0.9799571  0.6820715</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="co">#&gt; HEEBO-055-HCC55M14 -1.9324787 -0.41660108 -1.1042593 0.9011398 -1.4624225</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="co">#&gt; HEEBO-062-HCC62C12  0.4771780 -1.41003664  0.8862466 0.1550473  1.3513001</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="co">#&gt; HEEBO-058-HCC58H16  0.2534892 -0.02256408 -1.3384743 0.7570032 -0.9724537</span></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="co">#&gt; HEEBO-018-HCC18G15 -0.4992009  1.22717231 -0.3094537 0.6985167 -0.1961847</span></a></code></pre></div>
 </div>
 <div id="data-frame-with-the-summaries-of-age-related-changes-in-expression-level-and-heterogeneity" class="section level2">
 <h2 class="hasAnchor">
@@ -383,12 +371,12 @@
 <a class="sourceLine" id="cb13-7" data-line-number="7"><span class="co">#&gt; # A tibble: 6 x 7</span></a>
 <a class="sourceLine" id="cb13-8" data-line-number="8"><span class="co">#&gt;   feature level_change level_change.p heterogeneity_c… heterogeneity_c…</span></a>
 <a class="sourceLine" id="cb13-9" data-line-number="9"><span class="co">#&gt;   &lt;chr&gt;          &lt;dbl&gt;          &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="co">#&gt; 1 HEEBO-…       0.0971          0.263           0.0193           0.816 </span></a>
-<a class="sourceLine" id="cb13-11" data-line-number="11"><span class="co">#&gt; 2 HEEBO-…      -0.0312          0.720           0.162            0.0498</span></a>
-<a class="sourceLine" id="cb13-12" data-line-number="12"><span class="co">#&gt; 3 HEEBO-…       0.102           0.241           0.0773           0.350 </span></a>
-<a class="sourceLine" id="cb13-13" data-line-number="13"><span class="co">#&gt; 4 HEEBO-…       0.0867          0.318           0.0121           0.884 </span></a>
-<a class="sourceLine" id="cb13-14" data-line-number="14"><span class="co">#&gt; 5 HEEBO-…      -0.0878          0.311           0.0496           0.549 </span></a>
-<a class="sourceLine" id="cb13-15" data-line-number="15"><span class="co">#&gt; 6 HEEBO-…      -0.0720          0.407          -0.111            0.178 </span></a>
+<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="co">#&gt; 1 HEEBO-…      0.0221        0.799              0.107           0.194  </span></a>
+<a class="sourceLine" id="cb13-11" data-line-number="11"><span class="co">#&gt; 2 HEEBO-…      0.00765       0.930             -0.225           0.00607</span></a>
+<a class="sourceLine" id="cb13-12" data-line-number="12"><span class="co">#&gt; 3 HEEBO-…      0.0778        0.370             -0.116           0.160  </span></a>
+<a class="sourceLine" id="cb13-13" data-line-number="13"><span class="co">#&gt; 4 HEEBO-…     -0.255         0.00285           -0.0786          0.342  </span></a>
+<a class="sourceLine" id="cb13-14" data-line-number="14"><span class="co">#&gt; 5 HEEBO-…     -0.00786       0.928             -0.115           0.166  </span></a>
+<a class="sourceLine" id="cb13-15" data-line-number="15"><span class="co">#&gt; 6 HEEBO-…      0.296         0.000512           0.0615          0.458  </span></a>
 <a class="sourceLine" id="cb13-16" data-line-number="16"><span class="co">#&gt; # … with 2 more variables: level_change.p.adj &lt;dbl&gt;,</span></a>
 <a class="sourceLine" id="cb13-17" data-line-number="17"><span class="co">#&gt; #   heterogeneity_change.p.adj &lt;dbl&gt;</span></a></code></pre></div>
 </div>
@@ -408,7 +396,7 @@
 <a class="sourceLine" id="cb14-10" data-line-number="10"><span class="co">#&gt;  collate  en_GB.UTF-8                 </span></a>
 <a class="sourceLine" id="cb14-11" data-line-number="11"><span class="co">#&gt;  ctype    en_GB.UTF-8                 </span></a>
 <a class="sourceLine" id="cb14-12" data-line-number="12"><span class="co">#&gt;  tz       Europe/Istanbul             </span></a>
-<a class="sourceLine" id="cb14-13" data-line-number="13"><span class="co">#&gt;  date     2019-12-23                  </span></a>
+<a class="sourceLine" id="cb14-13" data-line-number="13"><span class="co">#&gt;  date     2019-12-31                  </span></a>
 <a class="sourceLine" id="cb14-14" data-line-number="14"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb14-15" data-line-number="15"><span class="co">#&gt; ─ Packages ───────────────────────────────────────────────────────────────────────────────────────</span></a>
 <a class="sourceLine" id="cb14-16" data-line-number="16"><span class="co">#&gt;  package        * version   date       lib source        </span></a>
@@ -444,7 +432,7 @@
 <a class="sourceLine" id="cb14-46" data-line-number="46"><span class="co">#&gt;  glue             1.3.1     2019-03-12 [2] CRAN (R 3.6.0)</span></a>
 <a class="sourceLine" id="cb14-47" data-line-number="47"><span class="co">#&gt;  gtable           0.3.0     2019-03-25 [2] CRAN (R 3.6.0)</span></a>
 <a class="sourceLine" id="cb14-48" data-line-number="48"><span class="co">#&gt;  haven            2.1.1     2019-07-04 [2] CRAN (R 3.6.0)</span></a>
-<a class="sourceLine" id="cb14-49" data-line-number="49"><span class="co">#&gt;  hetAge         * 0.1.0     2019-12-23 [1] local         </span></a>
+<a class="sourceLine" id="cb14-49" data-line-number="49"><span class="co">#&gt;  hetAge         * 0.1.0     2019-12-30 [1] local         </span></a>
 <a class="sourceLine" id="cb14-50" data-line-number="50"><span class="co">#&gt;  highr            0.8       2019-03-20 [2] CRAN (R 3.6.0)</span></a>
 <a class="sourceLine" id="cb14-51" data-line-number="51"><span class="co">#&gt;  hms              0.5.0     2019-07-09 [2] CRAN (R 3.6.0)</span></a>
 <a class="sourceLine" id="cb14-52" data-line-number="52"><span class="co">#&gt;  htmltools        0.3.6     2017-04-28 [2] CRAN (R 3.6.0)</span></a>
@@ -505,7 +493,7 @@
 <a class="sourceLine" id="cb14-107" data-line-number="107"><span class="co">#&gt;  yaml             2.2.0     2018-07-25 [2] CRAN (R 3.6.0)</span></a>
 <a class="sourceLine" id="cb14-108" data-line-number="108"><span class="co">#&gt;  zeallot          0.1.0     2018-01-28 [2] CRAN (R 3.6.0)</span></a>
 <a class="sourceLine" id="cb14-109" data-line-number="109"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb14-110" data-line-number="110"><span class="co">#&gt; [1] /private/var/folders/z1/nv26gvmx4_11_968lfd0n5rh0000gn/T/RtmpKP3OHs/temp_libpathd93c4488a6f</span></a>
+<a class="sourceLine" id="cb14-110" data-line-number="110"><span class="co">#&gt; [1] /private/var/folders/z1/nv26gvmx4_11_968lfd0n5rh0000gn/T/RtmpAH4Avp/temp_libpath729350b707e8</span></a>
 <a class="sourceLine" id="cb14-111" data-line-number="111"><span class="co">#&gt; [2] /Library/Frameworks/R.framework/Versions/3.6/Resources/library</span></a></code></pre></div>
 </div>
   </div>
