@@ -2,8 +2,9 @@
 
 library(SummarizedExperiment)
 
-counts <- readRDS('data-raw/exps.rds')
+counts <- readRDS('data-raw/exps_not_scaled.rds')
 ages <- readRDS('data-raw/ages.rds')
+names(ages) = gsub('Somel2010','Somel2011',names(ages))
 
 for(dname in names(ages)){
     cnts <- counts[[dname]]
